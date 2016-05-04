@@ -35,13 +35,6 @@ class App extends Component {
    * 1. Setup initial state hydration (with real church data) until
    *    firebase values are loaded than switch out...
    *
-   * 2. Create sidenav for navigation in app using:
-   * https://github.com/react-native-fellowship/react-native-side-menu#installation
-   *
-   * 3. Add page with list of videos with titles
-   *
-   * 4. Add Podcasts
-   *
    */
 
   componentDidMount() {
