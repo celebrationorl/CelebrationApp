@@ -11,6 +11,7 @@ import About from '../scenes/About';
 import Instagram from '../scenes/Instagram';
 import store from '../redux/appStore';
 
+// Oh Snap Its Celebration Orlando App!!!
 class App extends Component {
 
   constructor(props, context) {
