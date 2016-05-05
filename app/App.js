@@ -10,6 +10,7 @@ import Home from '../scenes/Home';
 import About from '../scenes/About';
 import Instagram from '../scenes/Instagram';
 import store from '../redux/appStore';
+import scenesData from '../redux/scenesData';
 
 class App extends Component {
 
@@ -23,27 +24,11 @@ class App extends Component {
     });
   }
 
-  componentWillMount() {
-    // snap is the snapshot of the data
-    this.firebaseRef = new Firebase("https://blistering-inferno-4190.firebaseio.com/pages");
-  }
-
-  /**
-   *
-   * TODO's:
-   *
-   * 1. Setup initial state hydration (with real church data) until
-   *    firebase values are loaded than switch out...
-   *
-   */
-
   componentDidMount() {
-    this.firebaseRef.on("value", function(dataSnapshot) {
-      store.dispatch({
-        type: 'GET_PAGE',
-        page: dataSnapshot.val()
-      })
-    }.bind(this));
+    store.dispatch({
+      type: 'GET_PAGE',
+      page: scenesData.pages
+    })
   }
 
   onSceneForward() {
@@ -67,6 +52,8 @@ class App extends Component {
   getPagePayload(type) {
 
     var {page} = this.state;
+
+    console.log('state: ', page);
 
     var payload = {
       title: '',
