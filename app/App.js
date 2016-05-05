@@ -24,21 +24,6 @@ class App extends Component {
     });
   }
 
-  // componentWillMount() {
-  //   // snap is the snapshot of the data
-  //   this.firebaseRef = new Firebase("https://blistering-inferno-4190.firebaseio.com/pages");
-  // }
-  //
-  // componentDidMount() {
-  //   this.firebaseRef.on("value", function(dataSnapshot) {
-  //     console.log(dataSnapshot.val());
-  //     store.dispatch({
-  //       type: 'GET_PAGE',
-  //       page: dataSnapshot.val()
-  //     })
-  //   }.bind(this));
-  // }
-
   componentDidMount() {
     store.dispatch({
       type: 'GET_PAGE',
