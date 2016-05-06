@@ -53,8 +53,6 @@ class App extends Component {
 
     var {page} = this.state;
 
-    console.log('state: ', page);
-
     var payload = {
       title: '',
       body: ''
