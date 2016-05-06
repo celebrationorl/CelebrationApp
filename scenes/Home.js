@@ -32,7 +32,7 @@ class Home extends Component {
         >
           Welcome to The Celebration Church App
         </Text>
-        <TabBar page="home" />
+        <TabBar navigator={this.props.navigator} page="home" />
       </View>
     );
   }

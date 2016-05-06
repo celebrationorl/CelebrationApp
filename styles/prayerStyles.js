@@ -1,6 +1,6 @@
 import React from 'react-native';
 
-const ContainerStyles = React.StyleSheet.create({
+const PrayerStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
@@ -29,4 +29,4 @@ const ContainerStyles = React.StyleSheet.create({
 
 });
 
-export default ContainerStyles;
+export default PrayerStyles;

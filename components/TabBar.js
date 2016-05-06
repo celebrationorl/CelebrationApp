@@ -21,12 +21,17 @@ class TabBar extends Component {
     return (
       <Tabs
         selected={this.props.page}
-        style={{backgroundColor: 'lightgrey'}}
-        selectedStyle={{color: 'darkgrey', fontWeight: 'bold'}}
-        onSelect={el => console.log(el)}
+        style={{backgroundColor: 'white',
+          borderTopWidth: 1,
+          borderTopColor: 'lightgrey'}}
+        selectedStyle={{color: 'lightgreen', fontWeight: '600'}}
+        onSelect={tab => {
+            this.props.navigator.push({ name: tab.props.name })
+          }
+        }
       >
-        <Text name="home">Home</Text>
-        <Text name="about">About</Text>
+        <Text name="podcasts">Podcasts</Text>
+        <Text name="prayer">Prayer</Text>
         <Text name="give">Give</Text>
         <Text name="visit">Visit</Text>
         <Text name="more">More</Text>
