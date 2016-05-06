@@ -1,4 +1,4 @@
-# CelebrationOrlApp
+# CelebrationApp
 
 ### App Starter Instructions
 - open terminal > git clone '<repo-ssh-link>'
