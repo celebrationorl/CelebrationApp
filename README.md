@@ -13,7 +13,7 @@ You will need iOS Simulator and XCode to run app.
 #### Use of `react-native-tabs`
 *this is an npm package and is required for use in this project*
 
-`Use in app:`
+**Use in app:**
 - used to create bottom TabBar.js component
 - to implement TabBar.js import it in whatever component you need it for `import TabBar from '../components/TabBar';`
 - then you must pass it 2 props, `navigator` & `page`
