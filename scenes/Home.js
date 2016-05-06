@@ -8,7 +8,7 @@ import React, {
 
 import ButtonStyles from '../styles/buttons';
 import HomeStyles from '../styles/homeStyles';
-import Tabs from 'react-native-tabs';
+import TabBar from '../components/TabBar';
 
 class Home extends Component {
 
@@ -32,15 +32,7 @@ class Home extends Component {
         >
           Welcome to The Celebration Church App
         </Text>
-        <Tabs
-          selected={'first'}
-          style={{backgroundColor: 'white'}}
-          selectedStyle={{color: 'lightgreen'}}
-          onSelect={el => console.log(el)}
-        >
-          <Text name="first">First</Text>
-          <Text name="second">Second</Text>
-        </Tabs>
+        <TabBar page="home" />
       </View>
     );
   }
