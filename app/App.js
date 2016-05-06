@@ -7,7 +7,11 @@ import React, {
 } from 'react-native';
 
 import Home from '../scenes/Home';
-import About from '../scenes/About';
+import Podcasts from '../scenes/Podcasts';
+import Prayer from '../scenes/Prayer';
+import Give from '../scenes/Give';
+import Visit from '../scenes/Visit';
+import More from '../scenes/More';
 import Instagram from '../scenes/Instagram';
 import store from '../redux/appStore';
 import scenesData from '../redux/scenesData';
@@ -31,29 +35,9 @@ class App extends Component {
     })
   }
 
-  onSceneForward() {
-    this.nav.push({
-      name: 'about',
-      index: 1
-    });
-  }
-
-  onSceneInstagram() {
-    this.nav.push({
-      name: 'instagram',
-      index: 2
-    });
-  }
-
-  onSceneBack() {
-    this.nav.pop();
-  }
-
   getPagePayload(type) {
 
     var {page} = this.state;
-
-    console.log('state: ', page);
 
     var payload = {
       title: '',
@@ -74,30 +58,51 @@ class App extends Component {
   renderScene(route, nav) {
 
     switch (route.name) {
-      case 'about':
+      case 'podcasts':
         return (
-          <About
-            payload={this.getPagePayload('about')}
-            onSceneSwitch={this.onSceneBack.bind(this)} />
+          <Podcasts
+            navigator={nav}
+            payload={this.getPagePayload('podcasts')}
+          />
         );
-      case 'home':
+      case 'prayer':
         return (
-          <Home
-            payload={this.getPagePayload('home')}
-            onSceneSwitch={this.onSceneForward.bind(this)}
-            onSceneInstagram={this.onSceneInstagram.bind(this)} />
+          <Prayer
+            navigator={nav}
+            payload={this.getPagePayload('prayer')}
+          />
+        );
+      case 'give':
+        return (
+          <Give
+            navigator={nav}
+            payload={this.getPagePayload('give')}
+          />
+        );
+      case 'visit':
+        return (
+          <Visit
+            navigator={nav}
+            payload={this.getPagePayload('visit')}
+          />
+        );
+      case 'more':
+        return (
+          <More
+            navigator={nav}
+            payload={this.getPagePayload('more')}
+          />
         );
       case 'instagram':
         return (
-          <Instagram
-            onSceneSwitch={this.onSceneBack.bind(this)} />
+          <Instagram />
         );
       default:
         return (
-          <Home
-            payload={this.getPagePayload('home')}
-            onSceneSwitch={this.onSceneBack.bind(this)}
-            onSceneInstagram={this.onSceneInstagram.bind(this)} />
+          <Podcasts
+            navigator={nav}
+            payload={this.getPagePayload('podcasts')}
+          />
       );
     }
   }
@@ -111,7 +116,7 @@ class App extends Component {
     return (
       <Navigator
         configureScene={this.configureScene}
-        initialRoute={{ name: 'home', index: 0 }}
+        initialRoute={{ name: 'podcasts', index: 0 }}
         ref={((nav) => {
           this.nav = nav;
         })}

@@ -1,14 +1,13 @@
 import React, {
   Component,
   View,
-  Text,
-  TouchableHighlight
+  Text
 } from 'react-native';
 
-import ButtonStyles from '../styles/buttons';
 import ContainerStyles from '../styles/containerStyles';
+import TabBar from '../components/TabBar';
 
-class About extends Component {
+class Give extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -16,7 +15,6 @@ class About extends Component {
 
   propTypes: {
     payload: React.PropTypes.object.isRequired,
-    onSceneSwitch: React.PropTypes.func.isRequired,
   }
 
   render() {
@@ -31,14 +29,10 @@ class About extends Component {
         <Text style={ContainerStyles.description}>
           {payload.body}
         </Text>
-        <TouchableHighlight
-          onPress={this.props.onSceneSwitch}
-          style={ButtonStyles.button}>
-          <Text style={ButtonStyles.buttonText}>Home</Text>
-        </TouchableHighlight>
+        <TabBar navigator={this.props.navigator} page="give" />
       </View>
     )
   }
 }
 
-export default About;
+export default Give;

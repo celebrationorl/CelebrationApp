@@ -17,7 +17,7 @@ const ContainerStyles = React.StyleSheet.create({
     justifyContent: 'center'
   },
 
-  description: {
+  body: {
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,

@@ -5,13 +5,25 @@
 
 var scenesData = {
   pages : {
-    about : {
-      body : "about page body with lorem ipsum dolor sit elect",
-      title : "About Hey yO Nested Page Title"
+    podcasts : {
+      body : "podcasts page body",
+      title : "Podcasts Title"
     },
-    home : {
-      body : "home page body nested with love in firebase",
-      title : "Home NO FIREBASE Page Title"
+    prayer : {
+      body : "prayer page body",
+      title : "Prayer Title"
+    },
+    give : {
+      body : "give page body",
+      title : "Give Title"
+    },
+    visit : {
+      body : "visit page body",
+      title : "Visit Title"
+    },
+    more : {
+      body: "more page body",
+      title: "More Title"
     }
   }
 }
