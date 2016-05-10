@@ -1,10 +1,10 @@
 import React, {
   Component,
-  View,
-  Text
+  WebView,
+  View
 } from 'react-native';
 
-import ContainerStyles from '../styles/containerStyles';
+import PodcastsStyles from '../styles/podcastsStyles';
 import TabBar from '../components/TabBar';
 
 class Podcasts extends Component {
@@ -13,25 +13,20 @@ class Podcasts extends Component {
     super(props, context);
   }
 
-  propTypes: {
-    payload: React.PropTypes.object.isRequired,
-  }
-
   render() {
 
-    var {payload} = this.props;
-
     return (
-      <View style={ContainerStyles.container}>
-        <Text style={ContainerStyles.title}>
-          {payload.title}
-        </Text>
-        <Text style={ContainerStyles.description}>
-          {payload.body}
-        </Text>
+      <View style={PodcastsStyles.container}>
+        <WebView
+          style={PodcastsStyles.webView}
+          source={{
+            uri: "http://celebrationorl.hipcast.com/podcast/HJjyJb",
+          }}
+          scalesPageToFit={true}
+        />
         <TabBar navigator={this.props.navigator} page="podcasts" />
       </View>
-    )
+    );
   }
 }
 
