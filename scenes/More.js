@@ -1,7 +1,8 @@
 import React, {
   Component,
   View,
-  Text
+  Text,
+  TouchableHighlight
 } from 'react-native';
 
 import MoreStyles from '../styles/moreStyles';
@@ -14,12 +15,12 @@ class More extends Component {
   }
 
   propTypes: {
-    payload: React.PropTypes.object.isRequired,
+    payload: React.PropTypes.object.isRequired
   }
 
   render() {
 
-    var {payload} = this.props;
+    var { payload } = this.props;
 
     return (
       <View style={MoreStyles.container}>
@@ -29,6 +30,16 @@ class More extends Component {
         <Text style={MoreStyles.description}>
           {payload.body}
         </Text>
+        <TouchableHighlight
+          onPress={() => this.props.navigator.push({ name: 'instagram' })}
+        >
+          <Text>Instagram</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => this.props.navigator.push({ name: 'about' })}
+        >
+          <Text>About</Text>
+        </TouchableHighlight>
         <TabBar navigator={this.props.navigator} page="more" />
       </View>
     )

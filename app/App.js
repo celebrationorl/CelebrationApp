@@ -7,6 +7,7 @@ import React, {
 } from 'react-native';
 
 import Home from '../scenes/Home';
+import About from '../scenes/About';
 import Podcasts from '../scenes/Podcasts';
 import Prayer from '../scenes/Prayer';
 import Give from '../scenes/Give';
@@ -62,7 +63,6 @@ class App extends Component {
         return (
           <Podcasts
             navigator={nav}
-            payload={this.getPagePayload('podcasts')}
           />
         );
       case 'prayer':
@@ -97,11 +97,17 @@ class App extends Component {
         return (
           <Instagram />
         );
+      case 'about':
+        return (
+          <About
+            navigator={nav}
+            payload={this.getPagePayload('about')}
+          />
+        );
       default:
         return (
           <Podcasts
             navigator={nav}
-            payload={this.getPagePayload('podcasts')}
           />
       );
     }
