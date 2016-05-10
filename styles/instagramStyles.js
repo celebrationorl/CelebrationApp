@@ -1,4 +1,4 @@
-import React, {Dimensions} from 'react-native';
+import React, { Dimensions } from 'react-native';
 var {height, width} = Dimensions.get('window');
 
 const InstagramStyles = React.StyleSheet.create({
@@ -13,7 +13,7 @@ const InstagramStyles = React.StyleSheet.create({
     marginBottom: 30,
     backgroundColor: 'white',
     height: height
-  },
+  }
 
 });
 

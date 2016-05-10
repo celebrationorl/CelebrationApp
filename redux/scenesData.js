@@ -5,25 +5,25 @@
 
 var scenesData = {
   pages : {
-    podcasts : {
-      body : "podcasts page body",
-      title : "Podcasts Title"
-    },
     prayer : {
-      body : "prayer page body",
-      title : "Prayer Title"
+      body : 'prayer page body',
+      title : 'Prayer Title'
     },
     give : {
-      body : "give page body",
-      title : "Give Title"
+      body : 'give page body',
+      title : 'Give Title'
     },
     visit : {
-      body : "visit page body",
-      title : "Visit Title"
+      body : 'visit page body',
+      title : 'Visit Title'
     },
     more : {
-      body: "more page body",
-      title: "More Title"
+      body: 'more page body',
+      title: 'More Title'
+    },
+    about: {
+      body: 'about page body',
+      title: 'About Title'
     }
   }
 }
