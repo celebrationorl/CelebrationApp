@@ -1,5 +1,6 @@
 import React, {
   Component,
+  MapView,
   View,
   Text
 } from 'react-native';
@@ -29,6 +30,21 @@ class Visit extends Component {
         <Text style={VisitStyles.body}>
           {payload.body}
         </Text>
+          <MapView
+            style={VisitStyles.map}
+            annotations={[{
+                latitude: 28.545540,
+                longitude: -81.366941,
+                title: 'Celebration Orlando Church',
+                subtitle: '863 E Robinson St'
+            }]}
+            region={{
+              latitude: 28.545540,
+              longitude: -81.366941,
+              latitudeDelta: parseFloat(0.01),
+              longitudeDelta: parseFloat(0.01)
+            }}
+          />
         <TabBar navigator={this.props.navigator} page="visit" />
       </View>
     );
