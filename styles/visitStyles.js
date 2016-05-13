@@ -32,6 +32,7 @@ const VisitStyles = React.StyleSheet.create({
     paddingRight: 15,
     paddingBottom: 5,
     paddingLeft: 15,
+    marginTop: 20,
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 15,

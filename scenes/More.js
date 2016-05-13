@@ -7,6 +7,7 @@ import React, {
 
 import MoreStyles from '../styles/moreStyles';
 import TabBar from '../components/TabBar';
+import ImageBar from '../components/ImageBar';
 
 class More extends Component {
 
@@ -24,6 +25,7 @@ class More extends Component {
 
     return (
       <View style={MoreStyles.container}>
+        <ImageBar title="More" />
         <Text style={MoreStyles.title}>
           {payload.title}
         </Text>

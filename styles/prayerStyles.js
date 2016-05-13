@@ -4,8 +4,7 @@ const PrayerStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    paddingTop: 100
+    justifyContent: 'flex-start'
   },
 
   title: {

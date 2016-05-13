@@ -4,8 +4,9 @@ import React, {
   Text
 } from 'react-native';
 
-import ContainerStyles from '../styles/containerStyles';
+import GiveStyles from '../styles/giveStyles';
 import TabBar from '../components/TabBar';
+import ImageBar from '../components/ImageBar';
 
 class Give extends Component {
 
@@ -22,11 +23,12 @@ class Give extends Component {
     var {payload} = this.props;
 
     return (
-      <View style={ContainerStyles.container}>
-        <Text style={ContainerStyles.title}>
+      <View style={GiveStyles.container}>
+        <ImageBar title="Give" />
+        <Text style={GiveStyles.title}>
           {payload.title}
         </Text>
-        <Text style={ContainerStyles.description}>
+        <Text style={GiveStyles.body}>
           {payload.body}
         </Text>
         <TabBar navigator={this.props.navigator} page="give" />
