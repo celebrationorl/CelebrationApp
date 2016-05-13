@@ -2,32 +2,12 @@ import React from 'react-native';
 
 const HomeStyles = React.StyleSheet.create({
 
-  // container: {
-  //   backgroundColor: 'white'
-  // },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-
-  // TODO: Remove below code on confirm of no further need
-  // bgImg: {
-  //   resizeMode: 'cover',
-  //   flex: 1,
-  //   alignSelf: 'center',
-  //   justifyContent: 'flex-start',
-  // },
-
-  // logo: {
-  //   marginBottom: 40,
-  //   marginTop: 75,
-  //   alignSelf: 'center',
-  //   justifyContent: 'center',
-  //   height: 240,
-  //   width: 300
-  // },
 
   title: {
     marginBottom: 10,
