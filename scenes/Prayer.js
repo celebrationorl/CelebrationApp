@@ -6,6 +6,7 @@ import React, {
 
 import PrayerStyles from '../styles/prayerStyles';
 import TabBar from '../components/TabBar';
+import ImageBar from '../components/ImageBar';
 
 class Prayer extends Component {
 
@@ -23,6 +24,7 @@ class Prayer extends Component {
 
     return (
       <View style={PrayerStyles.container}>
+        <ImageBar title="Prayer" />
         <Text style={PrayerStyles.title}>
           {payload.title}
         </Text>

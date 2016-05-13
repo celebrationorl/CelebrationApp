@@ -1,6 +1,6 @@
 import React from 'react-native';
 
-const MoreStyles = React.StyleSheet.create({
+const GiveStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
@@ -8,6 +8,7 @@ const MoreStyles = React.StyleSheet.create({
   },
 
   title: {
+    marginTop: 20,
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
@@ -28,4 +29,4 @@ const MoreStyles = React.StyleSheet.create({
 
 });
 
-export default MoreStyles;
+export default GiveStyles;

@@ -7,6 +7,7 @@ import React, {
 
 import VisitStyles from '../styles/visitStyles';
 import TabBar from '../components/TabBar';
+import ImageBar from '../components/ImageBar';
 
 class Visit extends Component {
 
@@ -24,9 +25,10 @@ class Visit extends Component {
 
     return (
       <View style={VisitStyles.container}>
-        <Text style={VisitStyles.title}>
+        <ImageBar title="Visit" />
+        {/*<Text style={VisitStyles.title}>
           {payload.title}
-        </Text>
+        </Text>*/}
         <Text style={VisitStyles.body}>
           {payload.body}
         </Text>
