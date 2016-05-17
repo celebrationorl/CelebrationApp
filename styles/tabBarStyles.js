@@ -13,6 +13,12 @@ const TabBarStyles = React.StyleSheet.create({
     backgroundColor: 'white',
     borderTopWidth: 1,
     borderTopColor: 'lightgrey'
+  },
+
+  icon: {
+    position: 'relative',
+    bottom: 20,
+    left: -62
   }
 
 });

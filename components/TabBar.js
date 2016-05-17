@@ -35,8 +35,14 @@ class TabBar extends Component {
         <Text name="prayer">Prayer</Text>
         <Text name="give">Give</Text>
 
-        {VisitIcon}
-        <Text name="visit">Visit</Text>
+
+        <Text name="visit">
+          <Text style={TabBarStyles.icon}>
+            {VisitIcon}
+          </Text>
+          Visit
+        </Text>
+
 
         <Text name="more">More</Text>
       </Tabs>
