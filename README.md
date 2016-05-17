@@ -17,5 +17,5 @@ You will need iOS Simulator and XCode to run app.
 - used to create bottom TabBar.js component
 - to implement TabBar.js import it in whatever component you need it for `import TabBar from '../components/TabBar';`
 - then you must pass it 2 props, `navigator` & `page`
-- 1st. prop `navigator` is used to reference the `<Navigator />'s` ref and do a `.push({ name: tab.props.name })`
+- 1st. prop `navigator` is used to reference the `<Navigator />'s` ref and do a `.replace({ name: tab.props.name })`
 - 2nd. prop `page` is used to tell the tab bar what tab it is on and which one to apply the `selectedStyle` to
