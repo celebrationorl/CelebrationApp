@@ -5,7 +5,6 @@ import React, {
 } from 'react-native';
 
 import PrayerStyles from '../styles/prayerStyles';
-import TabBar from '../components/TabBar';
 import ImageBar from '../components/ImageBar';
 
 class Prayer extends Component {
@@ -31,7 +30,6 @@ class Prayer extends Component {
         <Text style={PrayerStyles.body}>
           {payload.body}
         </Text>
-        <TabBar navigator={this.props.navigator} page="prayer" />
       </View>
     );
   }

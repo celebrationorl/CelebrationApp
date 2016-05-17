@@ -2,13 +2,20 @@ import React from 'react-native';
 
 const TabBarStyles = React.StyleSheet.create({
 
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  tabNavigator: {
+    height: 48
+  },
+
+  title: {
+    color: '#171717',
+    top: -5
+  },
+
+  titleSelected: {
+    color: '#171717',
+    fontWeight: '500'
   }
-  
+
 });
 
 export default TabBarStyles;

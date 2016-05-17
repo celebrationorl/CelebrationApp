@@ -5,7 +5,6 @@ import React, {
 } from 'react-native';
 
 import GiveStyles from '../styles/giveStyles';
-import TabBar from '../components/TabBar';
 import ImageBar from '../components/ImageBar';
 
 class Give extends Component {
@@ -31,7 +30,6 @@ class Give extends Component {
         <Text style={GiveStyles.body}>
           {payload.body}
         </Text>
-        <TabBar navigator={this.props.navigator} page="give" />
       </View>
     )
   }
