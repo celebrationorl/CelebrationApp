@@ -5,7 +5,6 @@ import React, {
 } from 'react-native';
 
 import PodcastsStyles from '../styles/podcastsStyles';
-import TabBar from '../components/TabBar';
 
 class Podcasts extends Component {
 
@@ -24,7 +23,6 @@ class Podcasts extends Component {
           }}
           scalesPageToFit={true}
         />
-        <TabBar navigator={this.props.navigator} page="podcasts" />
       </View>
     );
   }

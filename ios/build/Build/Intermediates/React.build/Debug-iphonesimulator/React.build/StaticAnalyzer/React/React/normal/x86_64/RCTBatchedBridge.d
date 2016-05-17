@@ -17,7 +17,6 @@ dependencies: \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Base/RCTLog.h \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Base/RCTDisplayLink.h \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Executors/RCTJSCExecutor.h \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
   /Users/jeremypagley/Desktop/Code\ Projects/CelebrationApp/node_modules/react-native/React/Base/RCTModuleData.h \
