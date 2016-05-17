@@ -3,6 +3,7 @@ import React from 'react-native';
 const ImageBarStyles = React.StyleSheet.create({
 
   title: {
+    fontFamily: 'Avenir',
     marginTop: 52,
     textAlign: 'center',
     fontSize: 30,

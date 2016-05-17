@@ -10,6 +10,7 @@ const HomeStyles = React.StyleSheet.create({
   },
 
   title: {
+    fontFamily: 'Avenir',
     marginBottom: 10,
     textAlign: 'center',
     fontSize: 24,
@@ -21,6 +22,7 @@ const HomeStyles = React.StyleSheet.create({
   },
 
   body: {
+    fontFamily: 'Avenir',
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
@@ -34,6 +36,7 @@ const HomeStyles = React.StyleSheet.create({
   },
 
   buttonText: {
+    fontFamily: 'Avenir',
     fontSize: 18,
     fontWeight: '800',
     color: 'white'

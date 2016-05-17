@@ -8,6 +8,7 @@ const GiveStyles = React.StyleSheet.create({
   },
 
   title: {
+    fontFamily: 'Avenir',
     marginTop: 20,
     marginRight: 10,
     marginLeft: 10,
@@ -18,6 +19,7 @@ const GiveStyles = React.StyleSheet.create({
   },
 
   body: {
+    fontFamily: 'Avenir',
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
