@@ -3,6 +3,7 @@ import React from 'react-native';
 const ButtonStyles = React.StyleSheet.create({
 
   buttonText: {
+    fontFamily: 'Avenir',
     fontSize: 18,
     fontWeight: '600',
     color: '#FAFAFA'
@@ -20,6 +21,7 @@ const ButtonStyles = React.StyleSheet.create({
   },
 
   buttonInstagramText: {
+    fontFamily: 'Avenir',
     fontSize: 18,
     fontWeight: '800',
     color: 'black'

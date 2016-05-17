@@ -8,7 +8,6 @@ import React, {
 
 import ButtonStyles from '../styles/buttons';
 import HomeStyles from '../styles/homeStyles';
-import TabBar from '../components/TabBar';
 
 class Home extends Component {
 

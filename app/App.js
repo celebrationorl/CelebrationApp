@@ -147,65 +147,6 @@ class App extends Component {
 
 export default App;
 
-
-// renderScene(route, nav) {
-//
-//   switch (route.name) {
-//     case 'podcasts':
-//       return (
-//         <Podcasts
-//           navigator={nav}
-//         />
-//       );
-//     case 'prayer':
-//       return (
-//         <Prayer
-//           navigator={nav}
-//           payload={this.getPagePayload('prayer')}
-//         />
-//       );
-//     case 'give':
-//       return (
-//         <Give
-//           navigator={nav}
-//           payload={this.getPagePayload('give')}
-//         />
-//       );
-//     case 'visit':
-//       return (
-//         <Visit
-//           navigator={nav}
-//           payload={this.getPagePayload('visit')}
-//         />
-//       );
-//     case 'more':
-//       return (
-//         <More
-//           navigator={nav}
-//           payload={this.getPagePayload('more')}
-//         />
-//       );
-//     case 'instagram':
-//       return (
-//         <Instagram />
-//       );
-//     case 'about':
-//       return (
-//         <About
-//           navigator={nav}
-//           payload={this.getPagePayload('about')}
-//         />
-//       );
-//     default:
-//       return (
-//         <Podcasts
-//           navigator={nav}
-//         />
-//     );
-//   }
-// }
-//
-//
 // configureScene() {
 //
 //   var NoTransition = {
