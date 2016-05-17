@@ -43,7 +43,7 @@ render() {
 }
 ```
 
-**For more usage examples and official docs see packages <a href="https://github.com/exponentjs/react-native-tab-navigator">Github Page (react-native-tab-navigator)</a>**
+For more usage examples and official docs see packages <a href="https://github.com/exponentjs/react-native-tab-navigator">Github Page (react-native-tab-navigator)</a>
 
 
 #### Use of <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a>
