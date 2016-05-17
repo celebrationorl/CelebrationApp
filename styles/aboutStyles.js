@@ -10,6 +10,7 @@ const AboutStyles = React.StyleSheet.create({
   },
 
   title: {
+    fontFamily: 'Avenir',
     marginBottom: 10,
     textAlign: 'center',
     fontSize: 24,
@@ -19,6 +20,7 @@ const AboutStyles = React.StyleSheet.create({
   },
 
   body: {
+    fontFamily: 'Avenir',
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,

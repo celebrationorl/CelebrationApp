@@ -9,6 +9,7 @@ const ContainerStyles = React.StyleSheet.create({
   },
 
   title: {
+    fontFamily: 'Avenir',
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
@@ -18,6 +19,7 @@ const ContainerStyles = React.StyleSheet.create({
   },
 
   body: {
+    fontFamily: 'Avenir',
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
