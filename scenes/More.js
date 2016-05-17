@@ -6,7 +6,6 @@ import React, {
 } from 'react-native';
 
 import MoreStyles from '../styles/moreStyles';
-import TabBar from '../components/TabBar';
 import ImageBar from '../components/ImageBar';
 
 class More extends Component {
@@ -42,7 +41,6 @@ class More extends Component {
         >
           <Text>About</Text>
         </TouchableHighlight>
-        <TabBar navigator={this.props.navigator} page="more" />
       </View>
     )
   }

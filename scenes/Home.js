@@ -16,14 +16,9 @@ class Home extends Component {
     super(props, context);
   }
 
-  propTypes: {
-    payload: React.PropTypes.object.isRequired,
-    onSceneSwitch: React.PropTypes.func.isRequired,
-  }
-
   render() {
 
-    var {payload} = this.props;
+    // var {payload} = this.props;
 
     return (
       <View style={HomeStyles.container}>
@@ -32,7 +27,6 @@ class Home extends Component {
         >
           Welcome to The Celebration Church App
         </Text>
-        <TabBar navigator={this.props.navigator} page="home" />
       </View>
     );
   }

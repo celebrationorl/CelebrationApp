@@ -17,6 +17,7 @@ const TabBarStyles = React.StyleSheet.create({
 
   icon: {
     position: 'relative',
+    padding: 50,
     bottom: 20,
     left: -62
   }

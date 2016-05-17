@@ -6,7 +6,6 @@ import React, {
 } from 'react-native';
 
 import VisitStyles from '../styles/visitStyles';
-import TabBar from '../components/TabBar';
 import ImageBar from '../components/ImageBar';
 
 class Visit extends Component {
@@ -26,9 +25,6 @@ class Visit extends Component {
     return (
       <View style={VisitStyles.container}>
         <ImageBar title="Visit" />
-        {/*<Text style={VisitStyles.title}>
-          {payload.title}
-        </Text>*/}
         <Text style={VisitStyles.body}>
           {payload.body}
         </Text>
@@ -47,7 +43,6 @@ class Visit extends Component {
               longitudeDelta: parseFloat(0.01)
             }}
           />
-        <TabBar navigator={this.props.navigator} page="visit" />
       </View>
     );
   }

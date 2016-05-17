@@ -5,7 +5,7 @@ import React, {
 } from 'react-native';
 
 import AboutStyles from '../styles/aboutStyles';
-import TabBar from '../components/TabBar';
+// import TabBar from '../components/TabBar';
 
 class About extends Component {
 
@@ -29,10 +29,11 @@ class About extends Component {
         <Text style={AboutStyles.description}>
           {payload.body}
         </Text>
-        <TabBar navigator={this.props.navigator} page="about" />
       </View>
     );
   }
 }
 
 export default About;
+
+// <TabBar navigator={this.props.navigator} page="about" />
