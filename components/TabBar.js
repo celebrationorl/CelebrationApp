@@ -5,7 +5,10 @@ import React, {
 } from 'react-native';
 
 import Tabs from 'react-native-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import TabBarStyles from '../styles/tabBarStyles';
+
+const VisitIcon = (<Icon name="map-marker" size={20} color="black" />)
 
 class TabBar extends Component {
 
@@ -21,9 +24,7 @@ class TabBar extends Component {
     return (
       <Tabs
         selected={this.props.page}
-        style={{backgroundColor: 'white',
-          borderTopWidth: 1,
-          borderTopColor: 'lightgrey'}}
+        style={TabBarStyles.tabs}
         selectedStyle={{color: 'lightgreen', fontWeight: '600'}}
         onSelect={tab => {
             this.props.navigator.replace({ name: tab.props.name })
@@ -33,7 +34,10 @@ class TabBar extends Component {
         <Text name="podcasts">Podcasts</Text>
         <Text name="prayer">Prayer</Text>
         <Text name="give">Give</Text>
+
+        {VisitIcon}
         <Text name="visit">Visit</Text>
+
         <Text name="more">More</Text>
       </Tabs>
     );

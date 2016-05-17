@@ -7,8 +7,14 @@ const TabBarStyles = React.StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+
+  tabs: {
+    backgroundColor: 'white',
+    borderTopWidth: 1,
+    borderTopColor: 'lightgrey'
   }
-  
+
 });
 
 export default TabBarStyles;
