@@ -42,7 +42,6 @@ const PodcastsIconOutline = (<Icon name="ios-mic-outline" size={iconSizes} color
       MoreIconOutline = (<Icon name="ios-paper-outline" size={iconSizes} color={iconColor} />),
       MoreIcon = (<Icon name="ios-paper" size={iconSizes} color={iconColor} />);
 
-const buildStyleInterpolator = require('buildStyleInterpolator');
 
 class App extends Component {
 
@@ -87,7 +86,6 @@ class App extends Component {
 
     return (
       <TabNavigator tabBarStyle={TabBarStyles.tabNavigator}>
-
         <TabNavigator.Item
           selected={this.state.selectedTab === 'podcasts'}
           titleStyle={TabBarStyles.title}
@@ -142,15 +140,12 @@ class App extends Component {
           onPress={() => this.setState({ selectedTab: 'more' })}>
           <More payload={this.getPagePayload('more')} />
         </TabNavigator.Item>
-
       </TabNavigator>
     );
   }
 }
 
 export default App;
-
-
 
 
 // renderScene(route, nav) {
