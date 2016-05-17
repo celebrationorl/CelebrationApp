@@ -10,15 +10,40 @@ You will need iOS Simulator and XCode to run app.
 
 ---
 
-#### Use of <a href="https://github.com/aksonov/react-native-tabs">react-native-tabs</a>
-*this is an npm package and is required for use in this project*
+#### Use of <a href="https://github.com/exponentjs/react-native-tab-navigator">react-native-tab-navigator</a>
+*this is an npm package and is required for use in this project. <b>Note this is used in conjunction with `react-native-vector-icons` to have icons over tab titles.</b>*
 
 **Use in app:**
-- used to create bottom TabBar.js component
-- to implement TabBar.js import it in whatever component you need it for `import TabBar from '../components/TabBar';`
-- then you must pass it 2 props, `navigator` & `page`
-- 1st. prop `navigator` is used to reference the `<Navigator />'s` ref and do a `.replace({ name: tab.props.name })`
-- 2nd. prop `page` is used to tell the tab bar what tab it is on and which one to apply the `selectedStyle` to
+```
+import Scene from '../scenes/scene';
+import TabBarStyles from '../styles/tabBarStyles';
+import Icon from 'react-native-vector-icons/<icon-library-name>'; // Example for icon library name can be: Ionicons, FontAwesome etc... (see `react-native-vector-icons` for supported icon libraries)
+
+const iconSizes = 24,
+  iconColor = '#171717';
+
+const PageNameIconOutline = (<Icon name="ios-mic-outline" size={iconSizes} color={iconColor} />)
+      PageNameIcon = (<Icon name="ios-mic" size={iconSizes} color={iconColor} />),
+
+render() {
+    return (
+        <TabNavigator tabBarStyle={TabBarStyles.tabNavigator}>
+            <TabNavigator.Item
+              selected={this.state.selectedTab === '<page-name>'}
+              titleStyle={TabBarStyles.title}
+              selectedTitleStyle={TabBarStyles.titleSelected}
+              title="<page-name>"
+              renderIcon={() => PageNameIconOutline}
+              renderSelectedIcon={() => PageNameIcon}
+              onPress={() => this.setState({ selectedTab: '<page-name>' })}>
+              <Scene />
+            </TabNavigator.Item>
+        </TabNavigator>
+    );
+}
+```
+
+**For more usage examples and official docs see packages <a href="https://github.com/exponentjs/react-native-tab-navigator">Github Page (react-native-tab-navigator)</a>**
 
 
 #### Use of <a href="https://github.com/oblador/react-native-vector-icons">react-native-vector-icons</a>
