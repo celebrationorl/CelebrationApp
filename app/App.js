@@ -16,26 +16,31 @@ import Give from '../scenes/Give';
 import Visit from '../scenes/Visit';
 import More from '../scenes/More';
 import Instagram from '../scenes/Instagram';
+
 import store from '../redux/appStore';
 import scenesData from '../redux/scenesData';
 
+import TabBarStyles from '../styles/tabBarStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-      // Podcasts icons
-const PodcastsIconOutline = (<Icon name="ios-mic-outline" size={30} color="black" />)
-      PodcastsIcon = (<Icon name="ios-mic" size={30} color="black" />),
+const iconSizes = 24,
+  iconColor = '#171717';
+
+      // Podcasts icon
+const PodcastsIconOutline = (<Icon name="ios-mic-outline" size={iconSizes} color={iconColor} />)
+      PodcastsIcon = (<Icon name="ios-mic" size={iconSizes} color={iconColor} />),
       // Prayer icons
-      PrayerIconOutline = (<Icon name="ios-heart-outline" size={30} color="black" />),
-      PrayerIcon = (<Icon name="ios-heart" size={30} color="black" />),
+      PrayerIconOutline = (<Icon name="ios-heart-outline" size={iconSizes} color={iconColor} />),
+      PrayerIcon = (<Icon name="ios-heart" size={iconSizes} color={iconColor} />),
       // Give icon
-      GiveIconOutline = (<Icon name="ios-flame-outline" size={30} color="black" />),
-      GiveIcon = (<Icon name="ios-flame" size={30} color="black" />),
+      GiveIconOutline = (<Icon name="ios-flame-outline" size={iconSizes} color={iconColor} />),
+      GiveIcon = (<Icon name="ios-flame" size={iconSizes} color={iconColor} />),
       // Visit icon
-      VisitIconOutline = (<Icon name="ios-location-outline" size={30} color="black" />),
-      VisitIcon = (<Icon name="ios-location" size={30} color="black" />),
+      VisitIconOutline = (<Icon name="ios-pin-outline" size={iconSizes} color={iconColor} />),
+      VisitIcon = (<Icon name="ios-pin" size={iconSizes} color={iconColor} />),
       // More icon
-      MoreIconOutline = (<Icon name="ios-list-outline" size={30} color="black" />),
-      MoreIcon = (<Icon name="ios-list" size={30} color="black" />);
+      MoreIconOutline = (<Icon name="ios-paper-outline" size={iconSizes} color={iconColor} />),
+      MoreIcon = (<Icon name="ios-paper" size={iconSizes} color={iconColor} />);
 
 const buildStyleInterpolator = require('buildStyleInterpolator');
 
@@ -81,10 +86,12 @@ class App extends Component {
   render() {
 
     return (
-      <TabNavigator tabBarStyle={{ paddingBottom: 5 }}>
+      <TabNavigator tabBarStyle={TabBarStyles.tabNavigator}>
 
         <TabNavigator.Item
           selected={this.state.selectedTab === 'podcasts'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
           title="Podcasts"
           renderIcon={() => PodcastsIconOutline}
           renderSelectedIcon={() => PodcastsIcon}
@@ -94,6 +101,8 @@ class App extends Component {
 
         <TabNavigator.Item
           selected={this.state.selectedTab === 'prayer'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
           title="Prayer"
           renderIcon={() => PrayerIconOutline}
           renderSelectedIcon={() => PrayerIcon}
@@ -103,11 +112,35 @@ class App extends Component {
 
         <TabNavigator.Item
           selected={this.state.selectedTab === 'give'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
           title="Give"
           renderIcon={() => GiveIconOutline}
           renderSelectedIcon={() => GiveIcon}
           onPress={() => this.setState({ selectedTab: 'give' })}>
           <Give payload={this.getPagePayload('give')} />
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
+          selected={this.state.selectedTab === 'visit'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
+          title="Visit"
+          renderIcon={() => VisitIconOutline}
+          renderSelectedIcon={() => VisitIcon}
+          onPress={() => this.setState({ selectedTab: 'visit' })}>
+          <Visit payload={this.getPagePayload('visit')} />
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
+          selected={this.state.selectedTab === 'more'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
+          title="More"
+          renderIcon={() => MoreIconOutline}
+          renderSelectedIcon={() => MoreIcon}
+          onPress={() => this.setState({ selectedTab: 'more' })}>
+          <More payload={this.getPagePayload('more')} />
         </TabNavigator.Item>
 
       </TabNavigator>
@@ -116,24 +149,6 @@ class App extends Component {
 }
 
 export default App;
-
-// <TabNavigator.Item
-//   selected={this.state.selectedTab === 'visit'}
-//   title="Visit"
-//   renderIcon={() => VisitIcon}
-//   renderSelectedIcon={() => VisitIcon}
-//   onPress={() => this.setState({ selectedTab: 'visit' })}>
-//   <Visit payload={this.getPagePayload('visit')} />
-// </TabNavigator.Item>
-//
-// <TabNavigator.Item
-//   selected={this.state.selectedTab === 'more'}
-//   title="More"
-//   renderIcon={() => MoreIcon}
-//   renderSelectedIcon={() => MoreIcon}
-//   onPress={() => this.setState({ selectedTab: 'more' })}>
-//   <More payload={this.getPagePayload('more')} />
-// </TabNavigator.Item>
 
 
 
