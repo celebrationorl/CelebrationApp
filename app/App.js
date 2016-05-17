@@ -17,6 +17,8 @@ import Instagram from '../scenes/Instagram';
 import store from '../redux/appStore';
 import scenesData from '../redux/scenesData';
 
+const buildStyleInterpolator = require('buildStyleInterpolator');
+
 class App extends Component {
 
   constructor(props, context) {
@@ -113,8 +115,31 @@ class App extends Component {
     }
   }
 
+
   configureScene() {
-    return Navigator.SceneConfigs.FloatFromBottom;
+
+    var NoTransition = {
+      opacity: {
+        from: 1,
+        to: 1,
+        min: 1,
+        max: 1,
+        type: 'linear',
+        extrapolate: false,
+        round: 100,
+      },
+    };
+
+    return {
+      ...Navigator.SceneConfigs.FadeAndroid,
+      gestures: null,
+      defaultTransitionVelocity: 1000,
+      animationInterpolators: {
+          into: buildStyleInterpolator(NoTransition),
+          out: buildStyleInterpolator(NoTransition)
+      }
+    }
+
   }
 
   render() {
