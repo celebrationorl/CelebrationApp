@@ -26,7 +26,7 @@ class TabBar extends Component {
           borderTopColor: 'lightgrey'}}
         selectedStyle={{color: 'lightgreen', fontWeight: '600'}}
         onSelect={tab => {
-            this.props.navigator.push({ name: tab.props.name })
+            this.props.navigator.replace({ name: tab.props.name })
           }
         }
       >
