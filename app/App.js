@@ -116,7 +116,7 @@ class App extends Component {
           renderIcon={() => GiveIconOutline}
           renderSelectedIcon={() => GiveIcon}
           onPress={() => this.setState({ selectedTab: 'give' })}>
-          <Give payload={this.getPagePayload('give')} />
+          <Give />
         </TabNavigator.Item>
 
         <TabNavigator.Item

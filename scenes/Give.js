@@ -1,7 +1,7 @@
 import React, {
   Component,
   View,
-  Text
+  WebView
 } from 'react-native';
 
 import GiveStyles from '../styles/giveStyles';
@@ -13,23 +13,35 @@ class Give extends Component {
     super(props, context);
   }
 
-  propTypes: {
-    payload: React.PropTypes.object.isRequired,
-  }
-
   render() {
 
-    var {payload} = this.props;
+    let hideGivingHeroImgJSCode = `
+        var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
+        var nav = document.getElementsByClassName("wpb_text_column wpb_content_element  fixed-menu");
+
+        var footer = document.getElementById("footer-callout-wrap");
+
+        footer.style.display = "none";
+        heroImg[0].style.display = "none";
+        nav[0].style.display = "none";
+
+        document.querySelector(".wpb_text_column.wpb_content_element.newtitle").style.display = 'none';
+        document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
+
+    `;
 
     return (
       <View style={GiveStyles.container}>
         <ImageBar title="Give" />
-        <Text style={GiveStyles.title}>
-          {payload.title}
-        </Text>
-        <Text style={GiveStyles.body}>
-          {payload.body}
-        </Text>
+        <WebView
+          style={GiveStyles.webView}
+          source={{
+            uri: 'http://celebrationorl.org/giving-information/',
+          }}
+          injectedJavaScript={hideGivingHeroImgJSCode}
+          javaScriptEnabledAndroid={true}
+          scalesPageToFit={true}
+        />
       </View>
     )
   }
