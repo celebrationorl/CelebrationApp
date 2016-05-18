@@ -9,10 +9,6 @@ var scenesData = {
       body : 'prayer page body',
       title : 'Prayer Title'
     },
-    give : {
-      body : 'give page body',
-      title : 'Give Title'
-    },
     visit : {
       body : 'Howard Middle School, 863 E Robinson St',
       title : 'Map'
