@@ -1,5 +1,3 @@
-var Firebase = require('firebase');
-
 import React, {
   Component,
   View,

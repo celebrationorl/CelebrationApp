@@ -2,7 +2,8 @@ import React, {
   Component,
   View,
   Text,
-  TouchableHighlight
+  TouchableHighlight,
+  Modal
 } from 'react-native';
 
 import MoreStyles from '../styles/moreStyles';
@@ -18,6 +19,16 @@ const TwitterIcon = (<Icon name="social-twitter" size={iconSizes} color={iconCol
 const MailIcon = (<Icon name="mail" size={iconSizes} color={iconColor} />);
 
 class More extends Component {
+
+  getInitialState() {
+    return {
+      modalVisible: false,
+    };
+  }
+
+  _setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
 
   constructor(props, context) {
     super(props, context);
@@ -62,12 +73,28 @@ class More extends Component {
               </TouchableHighlight>
             </View>
             <View style={MoreStyles.aboutBlock}>
-              <TouchableHighlight style={MoreStyles.instagramIcon}>
+              <TouchableHighlight
+                onPress={() => this._setModalVisible(true)}
+                style={MoreStyles.instagramIcon}>
                 <Text style={MoreStyles.aboutBlockText}>About</Text>
               </TouchableHighlight>
             </View>
           </View>
         </View>
+
+        <Modal
+          animationType="slide"
+          visible={this.state.modalVisible}
+          onRequestClose={() => {this._setModalVisible(false)}}
+          >
+          <View>
+            <Button
+              onPress={this._setModalVisible.bind(this, false)}
+              style={styles.modalButton}>
+              Close
+            </Button>
+          </View>
+        </Modal>
       </View>
     )
   }
