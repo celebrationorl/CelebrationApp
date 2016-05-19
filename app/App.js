@@ -138,7 +138,7 @@ class App extends Component {
           renderIcon={() => MoreIconOutline}
           renderSelectedIcon={() => MoreIcon}
           onPress={() => this.setState({ selectedTab: 'more' })}>
-          <More payload={this.getPagePayload('more')} />
+          <More />
         </TabNavigator.Item>
       </TabNavigator>
     );

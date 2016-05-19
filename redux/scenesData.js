@@ -13,10 +13,6 @@ var scenesData = {
       body : 'Howard Middle School, 863 E Robinson St',
       title : 'Map'
     },
-    more : {
-      body: 'more page body',
-      title: 'More Title'
-    },
     about: {
       body: 'about page body',
       title: 'About Title'
