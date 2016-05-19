@@ -9,6 +9,7 @@ import React, {
 import MoreStyles from '../styles/moreStyles';
 import ImageBar from '../components/ImageBar';
 import Icon from 'react-native-vector-icons/Foundation';
+import store from '../redux/appStore';
 
 const iconSizes = 60,
   iconColor = '#171717';
@@ -20,18 +21,33 @@ const MailIcon = (<Icon name="mail" size={iconSizes} color={iconColor} />);
 
 class More extends Component {
 
-  getInitialState() {
-    return {
-      modalVisible: false,
-    };
-  }
-
-  _setModalVisible(visible) {
-    this.setState({ modalVisible: visible });
-  }
-
   constructor(props, context) {
     super(props, context);
+
+    this.state = store.getState();
+
+    store.subscribe(() => {
+      this.setState(store.getState());
+    });
+  }
+
+  componentDidMount() {
+    store.dispatch({
+      type: 'SHOW_MODAL',
+      modalType: ''
+    })
+
+    var { modalType } = this.state;
+
+    console.log(this.state);
+  }
+
+  _showModal(modalType) {
+    console.log(this.state);
+    store.dispatch({
+      type: 'SHOW_MODAL',
+      modalType: modalType
+    })
   }
 
   render() {
@@ -74,7 +90,7 @@ class More extends Component {
             </View>
             <View style={MoreStyles.aboutBlock}>
               <TouchableHighlight
-                onPress={() => this._setModalVisible(true)}
+                onPress={() => this._showModal('about')}
                 style={MoreStyles.instagramIcon}>
                 <Text style={MoreStyles.aboutBlockText}>About</Text>
               </TouchableHighlight>
@@ -82,22 +98,24 @@ class More extends Component {
           </View>
         </View>
 
-        <Modal
-          animationType="slide"
-          visible={this.state.modalVisible}
-          onRequestClose={() => {this._setModalVisible(false)}}
-          >
-          <View>
-            <Button
-              onPress={this._setModalVisible.bind(this, false)}
-              style={styles.modalButton}>
-              Close
-            </Button>
-          </View>
-        </Modal>
+
       </View>
     )
   }
 }
+
+// <Modal
+//   animationType="slide"
+//   visible={this.state.modalVisible}
+//   onRequestClose={() => {this._showModal(false)}}
+//   >
+//   <View>
+//     <TouchableHighlight
+//       onPress={this._showModal.bind(false)}
+//       style={styles.modalButton}>
+//       Close
+//     </TouchableHighlight>
+//   </View>
+// </Modal>
 
 export default More;

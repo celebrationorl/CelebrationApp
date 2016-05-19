@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { GET_PAGE } from './appActions';
+import { GET_PAGE, SHOW_MODAL } from './appActions';
 import scenesData from '../redux/scenesData';
 
 /*
@@ -10,6 +10,10 @@ function appStore(state = scenesData.pages, action) {
     case GET_PAGE:
       return Object.assign({}, state, {
         page: action.page
+      })
+    case SHOW_MODAL:
+      return Object.assign({}, state, {
+        modalType: action.modalType
       })
     default:
       return state;
