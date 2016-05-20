@@ -1,7 +1,6 @@
 import React from 'react-native';
 
-const moreblockBorderColor = '#171717';
-
-export default {
-  moreblockBorderColor
-};
+export const moreblockBorderColor = '#171717';
+export const titleColor = '#171717';
+export const paragraphColor = '#4E4E4E';
+export const rowBorderColor = 'lightgrey';

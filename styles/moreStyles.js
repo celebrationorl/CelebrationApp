@@ -1,11 +1,37 @@
-import React from 'react-native';
-import {moreblockBorderColor} from './moreStyles';
+import React, { Dimensions } from 'react-native';
+import { moreblockBorderColor } from './moreStyles';
+var {height, width} = Dimensions.get('window');
 
 const MoreStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
     alignItems: 'center'
+  },
+
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+
+  modalInnerContainer: {
+    alignItems: 'center',
+    height: height,
+    width: width,
+  },
+
+  modalCloseButton: {
+    marginTop: 59,
+    paddingTop: 15,
+    paddingRight: 20,
+    paddingBottom: 5,
+    paddingLeft: 15,
+    alignSelf: 'flex-end'
+  },
+
+  modalCloseButtonText: {
+    fontFamily: 'Avenir',
+    color: 'black',
   },
 
   websiteBlockText: {
