@@ -62,7 +62,7 @@ class App extends Component {
 
   getPagePayload(type) {
 
-    var {page} = this.state;
+    var { page } = this.state;
 
     var payload = {
       title: '',
@@ -77,6 +77,25 @@ class App extends Component {
     }
 
     return payload;
+
+  }
+
+  getModalVisibility() {
+
+    var { modalType } = this.state;
+
+    if (modalType !== '') {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  getModalType() {
+
+    var { modalType } = this.state;
+    return modalType;
 
   }
 
@@ -136,7 +155,11 @@ class App extends Component {
           renderIcon={() => MoreIconOutline}
           renderSelectedIcon={() => MoreIcon}
           onPress={() => this.setState({ selectedTab: 'more' })}>
-          <More />
+          <More
+            modalVisibility={this.getModalVisibility()}
+            modalType={this.getModalType()}
+            aboutPayload={this.getPagePayload('about')}
+            />
         </TabNavigator.Item>
       </TabNavigator>
     );

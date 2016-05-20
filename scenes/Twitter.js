@@ -5,9 +5,9 @@ import React, {
   Text
 } from 'react-native';
 
-import InstagramStyles from '../styles/instagramStyles';
+import TwitterStyles from '../styles/twitterStyles';
 
-class Instagram extends Component {
+class Twitter extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -18,9 +18,9 @@ class Instagram extends Component {
     return (
       <View>
         <WebView
-          style={InstagramStyles.webView}
+          style={TwitterStyles.webView}
           source={{
-            uri: 'https://www.instagram.com/celebrationorl/',
+            uri: 'https://twitter.com/CelebrationORL',
           }}
           scalesPageToFit={true}
         />
@@ -29,4 +29,4 @@ class Instagram extends Component {
   }
 }
 
-export default Instagram;
+export default Twitter;

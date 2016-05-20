@@ -2,10 +2,15 @@ import { createStore } from 'redux';
 import { GET_PAGE, SHOW_MODAL } from './appActions';
 import scenesData from '../redux/scenesData';
 
+var initialState = {
+  ...scenesData.pages,
+  modalType: ''
+}
+
 /*
  * reducers
  */
-function appStore(state = scenesData.pages, action) {
+function appStore(state = initialState, action) {
   switch (action.type) {
     case GET_PAGE:
       return Object.assign({}, state, {
