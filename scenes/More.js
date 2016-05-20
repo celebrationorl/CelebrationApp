@@ -13,6 +13,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import store from '../redux/appStore';
 
 import About from './About';
+import Email from './Email';
 import Instagram from './Instagram';
 import Twitter from './Twitter';
 import Facebook from './Facebook';
@@ -44,7 +45,6 @@ class More extends Component {
       type: 'SHOW_MODAL',
       modalType: modalType
     })
-    console.log(this.state);
   }
 
   getModal() {
@@ -63,6 +63,8 @@ class More extends Component {
       modalContent = (<Facebook />)
     } else if (modalType === 'celebration') {
       modalContent = (<CelebrationSite />)
+    } else if (modalType === 'email') {
+      modalContent = (<Email />)
     }
 
     return (
@@ -125,7 +127,10 @@ class More extends Component {
               </TouchableHighlight>
             </View>
             <View style={MoreStyles.mailBlock}>
-              <TouchableHighlight style={MoreStyles.instagramIcon}>
+              <TouchableHighlight
+                onPress={() => this.showModal('email')}
+                style={MoreStyles.instagramIcon}
+                >
                 {MailIcon}
               </TouchableHighlight>
             </View>

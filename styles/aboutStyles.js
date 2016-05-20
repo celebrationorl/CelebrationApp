@@ -1,12 +1,15 @@
-import React from 'react-native';
+import React, { Dimensions } from 'react-native';
+var { width } = Dimensions.get('window');
+import { titleColor } from './moreStyles';
 
 const AboutStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
-    paddingTop: 100,
+    backgroundColor: 'white',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: width
   },
 
   title: {
@@ -16,7 +19,7 @@ const AboutStyles = React.StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     alignSelf: 'center',
-    color: 'lightgrey'
+    color: titleColor
   },
 
   body: {
@@ -26,7 +29,7 @@ const AboutStyles = React.StyleSheet.create({
     marginBottom: 10,
     fontSize: 16,
     fontWeight: '400',
-    color: 'lightgrey',
+    color: titleColor,
     alignSelf: 'center',
     opacity: 0.85
   }
