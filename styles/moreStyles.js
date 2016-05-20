@@ -1,8 +1,6 @@
 import React, { Dimensions } from 'react-native';
-import {moreblockBorderColor} from './moreStyles';
+import { moreblockBorderColor } from './moreStyles';
 var {height, width} = Dimensions.get('window');
-
-var deductedWidth = width - 10;
 
 const MoreStyles = React.StyleSheet.create({
 
