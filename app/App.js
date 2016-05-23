@@ -54,6 +54,9 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    this.setState({ selectedTab : 'podcasts' });
+
     store.dispatch({
       type: 'GET_PAGE',
       page: scenesData.pages
