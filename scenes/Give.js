@@ -4,6 +4,21 @@ import React, {
   WebView
 } from 'react-native';
 
+var injectedJSCode = `
+    var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
+    var nav = document.getElementsByClassName("wpb_text_column wpb_content_element  fixed-menu");
+
+    var footer = document.getElementById("footer-callout-wrap");
+
+    footer.style.display = "none";
+    heroImg[0].style.display = "none";
+    nav[0].style.display = "none";
+
+    document.querySelector(".wpb_text_column.wpb_content_element.newtitle").style.display = 'none';
+    document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
+
+`;
+
 import GiveStyles from '../styles/giveStyles';
 import ImageBar from '../components/ImageBar';
 
@@ -15,21 +30,6 @@ class Give extends Component {
 
   render() {
 
-    let hideGivingHeroImgJSCode = `
-        var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
-        var nav = document.getElementsByClassName("wpb_text_column wpb_content_element  fixed-menu");
-
-        var footer = document.getElementById("footer-callout-wrap");
-
-        footer.style.display = "none";
-        heroImg[0].style.display = "none";
-        nav[0].style.display = "none";
-
-        document.querySelector(".wpb_text_column.wpb_content_element.newtitle").style.display = 'none';
-        document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
-
-    `;
-
     return (
       <View style={GiveStyles.container}>
         <ImageBar title="Give" />
@@ -38,7 +38,7 @@ class Give extends Component {
           source={{
             uri: 'http://celebrationorl.org/giving-information/',
           }}
-          injectedJavaScript={hideGivingHeroImgJSCode}
+          injectedJavaScript={injectedJSCode}
           javaScriptEnabledAndroid={true}
           scalesPageToFit={true}
         />
