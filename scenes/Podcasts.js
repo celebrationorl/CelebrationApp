@@ -6,11 +6,22 @@ import React, {
 
 var injectedJSCode = `
 
-  // document.getElementById("top").style.marginTop = "50px";
-
   document.querySelector(".splash").style.display = 'none';
 
-  document.querySelector("nav").style.display = "none";
+  document.querySelector(".row").style.marginTop = "-51px";
+
+  document.querySelector("nav.navbar.navbar-inverse.navbar-fixed-top").style.display = "none";
+  document.querySelector("nav.navbar.navbar-inverse.navbar-fixed-top").style.opacity = "0";
+
+  document.querySelector(".info + .info").style.display = "none";
+
+  document.querySelector(".comments").style.display = "none";
+
+  document.querySelector("#footer").style.display = "none";
+
+  document.querySelector("div.aplayer").style.backgroundColor = "white";
+
+  document.body.style.backgroundColor = "white";
 
 `;
 
