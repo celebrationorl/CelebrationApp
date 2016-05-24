@@ -9,9 +9,6 @@ const PodcastsStyles = React.StyleSheet.create({
   },
 
   webView: {
-    marginTop: -50,
-    marginBottom: 50,
-    backgroundColor: 'white',
     height: height
   }
 
