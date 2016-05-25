@@ -6,10 +6,9 @@ import React, {
 
 import TabNavigator from 'react-native-tab-navigator';
 
-import Home from '../scenes/Home';
 import About from '../scenes/About';
 import Podcasts from '../scenes/Podcasts';
-import Prayer from '../scenes/Prayer';
+import News from '../scenes/News';
 import Give from '../scenes/Give';
 import Visit from '../scenes/Visit';
 import More from '../scenes/More';
@@ -27,18 +26,18 @@ const iconSizes = 24,
       // Podcasts icon
 const PodcastsIconOutline = (<Icon name="ios-mic-outline" size={iconSizes} color={iconColor} />)
       PodcastsIcon = (<Icon name="ios-mic" size={iconSizes} color={iconColor} />),
-      // Prayer icons
-      PrayerIconOutline = (<Icon name="ios-heart-outline" size={iconSizes} color={iconColor} />),
-      PrayerIcon = (<Icon name="ios-heart" size={iconSizes} color={iconColor} />),
+      // News icons
+      NewsIconOutline = (<Icon name="ios-calendar-outline" size={iconSizes} color={iconColor} />),
+      NewsIcon = (<Icon name="ios-calendar" size={iconSizes} color={iconColor} />);
       // Give icon
-      GiveIconOutline = (<Icon name="ios-flame-outline" size={iconSizes} color={iconColor} />),
-      GiveIcon = (<Icon name="ios-flame" size={iconSizes} color={iconColor} />),
+      GiveIconOutline = (<Icon name="ios-heart-outline" size={iconSizes} color={iconColor} />),
+      GiveIcon = (<Icon name="ios-heart" size={iconSizes} color={iconColor} />),
       // Visit icon
       VisitIconOutline = (<Icon name="ios-pin-outline" size={iconSizes} color={iconColor} />),
       VisitIcon = (<Icon name="ios-pin" size={iconSizes} color={iconColor} />),
       // More icon
-      MoreIconOutline = (<Icon name="ios-paper-outline" size={iconSizes} color={iconColor} />),
-      MoreIcon = (<Icon name="ios-paper" size={iconSizes} color={iconColor} />);
+      MoreIconOutline = (<Icon name="ios-more-outline" size={iconSizes} color={iconColor} />),
+      MoreIcon = (<Icon name="ios-more" size={iconSizes} color={iconColor} />);
 
 
 class App extends Component {
@@ -55,7 +54,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    this.setState({ selectedTab : 'podcasts' });
+    this.setState({ selectedTab : 'news' });
 
     store.dispatch({
       type: 'GET_PAGE',
@@ -107,6 +106,17 @@ class App extends Component {
     return (
       <TabNavigator tabBarStyle={TabBarStyles.tabNavigator}>
         <TabNavigator.Item
+          selected={this.state.selectedTab === 'news'}
+          titleStyle={TabBarStyles.title}
+          selectedTitleStyle={TabBarStyles.titleSelected}
+          title="News"
+          renderIcon={() => NewsIconOutline}
+          renderSelectedIcon={() => NewsIcon}
+          onPress={() => this.setState({ selectedTab: 'news' })}>
+          <News />
+        </TabNavigator.Item>
+
+        <TabNavigator.Item
           selected={this.state.selectedTab === 'podcasts'}
           titleStyle={TabBarStyles.title}
           selectedTitleStyle={TabBarStyles.titleSelected}
@@ -115,17 +125,6 @@ class App extends Component {
           renderSelectedIcon={() => PodcastsIcon}
           onPress={() => this.setState({ selectedTab: 'podcasts' })}>
           <Podcasts />
-        </TabNavigator.Item>
-
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'prayer'}
-          titleStyle={TabBarStyles.title}
-          selectedTitleStyle={TabBarStyles.titleSelected}
-          title="Prayer"
-          renderIcon={() => PrayerIconOutline}
-          renderSelectedIcon={() => PrayerIcon}
-          onPress={() => this.setState({ selectedTab: 'prayer' })}>
-          <Prayer payload={this.getPagePayload('prayer')} />
         </TabNavigator.Item>
 
         <TabNavigator.Item
