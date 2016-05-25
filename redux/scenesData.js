@@ -14,8 +14,8 @@ var scenesData = {
       title : 'Map'
     },
     about: {
-      body: 'about page body',
-      title: 'About Title'
+      body: 'At Celebration Church, our mission is leading people to experience a God-First Life. “But seek first the kingdom of God and His righteousness, and all these things will be given to you as well.” Matthew 6:33',
+      title: 'WELCOME TO CELEBRATION CHURCH'
     }
   }
 }
