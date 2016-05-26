@@ -2,8 +2,27 @@ import React, {
   Component,
   View,
   Image,
-  Text
+  Text,
+  WebView
 } from 'react-native';
+
+var injectedMissionsWebViewJSCode = `
+
+  var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
+  var nav = document.getElementsByClassName("wpb_text_column wpb_content_element  fixed-menu");
+
+  var footer = document.getElementById("footer-callout-wrap");
+  var copyright = document.getElementById("footer-bottom");
+
+  footer.style.display = "none";
+  copyright.style.display = "none";
+  heroImg[0].style.display = "none";
+  nav[0].style.display = "none";
+
+  document.querySelector(".wpb_text_column.wpb_content_element.newtitle").style.display = 'none';
+  document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
+
+`;
 
 import ChurchLifeStyles from '../styles/churchLifeStyles';
 
@@ -35,7 +54,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.body}>
             <View style={ChurchLifeStyles.primaryTextWrapper}>
               <Text style={ChurchLifeStyles.primaryText}>
-                Preschool/Nursery
+                PRESCHOOL/NURSERY
               </Text>
             </View>
             <Text style={ChurchLifeStyles.secondaryText}>
@@ -64,7 +83,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.body}>
             <View style={ChurchLifeStyles.primaryTextWrapper}>
               <Text style={ChurchLifeStyles.primaryText}>
-                Kids
+                KIDS
               </Text>
             </View>
             <Text style={ChurchLifeStyles.secondaryText}>
@@ -94,7 +113,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.body}>
             <View style={ChurchLifeStyles.primaryTextWrapper}>
               <Text style={ChurchLifeStyles.primaryText}>
-                Super Squad
+                SUPER SQUAD
               </Text>
             </View>
             <Text style={ChurchLifeStyles.secondaryText}>
@@ -114,21 +133,133 @@ class ChurchLifeArea extends Component {
       );
     } else if (churchLifeAreaType === 'fusejv') {
       areaContent = (
-        <Text style={ChurchLifeStyles.areaText}>
-          fuse jv
-        </Text>
+        <View style={ChurchLifeStyles.body}>
+          <View style={ChurchLifeStyles.primaryTextWrapper}>
+            <Text style={ChurchLifeStyles.primaryText}>
+              FUSE JV
+            </Text>
+          </View>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            Fuse JV is for grades 5th-7th and meets separately
+            every Sunday during church for their own awesome service!
+            Check in with our team to learn more about Fuse JV services,
+            community groups and events like lunch and random fun in the
+            park after church!
+          </Text>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            For more info contact: jdelacruz@celebrationorl.org
+          </Text>
+        </View>
       );
     } else if (churchLifeAreaType === 'fuse') {
       areaContent = (
-        <Text style={ChurchLifeStyles.areaText}>
-          fuse
-        </Text>
+        <View style={ChurchLifeStyles.body}>
+          <View style={ChurchLifeStyles.primaryTextWrapper}>
+            <Text style={ChurchLifeStyles.primaryText}>
+              FUSE
+            </Text>
+          </View>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            Fuse is our youth ministry for grades 8th-12th.
+            We meet together every month for fun and relevant
+            services designed specifically for teens and have
+            community groups running throughout the city each
+            week. Invite your friends and come hang out!
+          </Text>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            For more info contact: jdelacruz@celebrationorl.org
+          </Text>
+        </View>
       );
     } else if (churchLifeAreaType === 'communityGroups') {
       areaContent = (
-        <Text style={ChurchLifeStyles.areaBodyTitle}>
-          community groups
-        </Text>
+        <View style={ChurchLifeStyles.body}>
+          <View style={ChurchLifeStyles.primaryTextWrapper}>
+            <Text style={ChurchLifeStyles.primaryText}>
+              COMMUNITY GROUPS
+            </Text>
+          </View>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            Community groups are the heartbeat of our church.
+            Every week, in homes all across the city, groups get
+            together to hang out, have dinner and just do life
+            together! It’s a place to meet and connect with friends
+            as well as learn and share your experiences in your walk
+            with God. If you would like to be a part of a group,
+            visit our Next Steps area in the foyer before or after
+            any of our Sunday services. Please feel free to visit
+            several community groups before choosing one that best
+            fits you!
+          </Text>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            For more information or to get plugged into a group email: groups@celebrationorl.org
+          </Text>
+        </View>
+      );
+    } else if (churchLifeAreaType === 'sisterhood') {
+      areaContent = (
+        <View style={ChurchLifeStyles.body}>
+          <View style={ChurchLifeStyles.primaryTextWrapper}>
+            <Text style={ChurchLifeStyles.primaryText}>
+              SISTERHOOD
+            </Text>
+          </View>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            Sisterhood exists to place value on women at
+            every stage of life and serves to help them
+            reach their fullest potential. It is about
+            the gathering of everyday women who desire
+            to make their world a better place. We want
+            to inspire women so that their contribution
+            can, and will, make a difference.
+          </Text>
+        </View>
+      );
+    } else if (churchLifeAreaType === 'men') {
+      areaContent = (
+        <View style={ChurchLifeStyles.body}>
+          <View style={ChurchLifeStyles.primaryTextWrapper}>
+            <Text style={ChurchLifeStyles.primaryText}>
+              MEN
+            </Text>
+          </View>
+          <Text style={ChurchLifeStyles.secondaryText}>
+            The goal of our men’s ministry is to equip men to
+            be Christ-centered, Spirit-filled leaders who put
+            God first in everything they do. Celebration Men
+            provides a place for building community and strong
+            relationships where men will develop a sense of
+            purpose and a solid identity based on who God
+            says they are.
+          </Text>
+        </View>
+      );
+    } else if (churchLifeAreaType === 'outreachMissions') {
+      areaContent = (
+        <View>
+          <WebView
+            style={ChurchLifeStyles.webView}
+            source={{
+              uri: "http://celebrationorl.org/outreach/",
+            }}
+            injectedJavaScript={injectedMissionsWebViewJSCode}
+            javaScriptEnabledAndroid={true}
+            scalesPageToFit={true}
+          />
+        </View>
+      );
+    } else if (churchLifeAreaType === 'college') {
+      areaContent = (
+        <View>
+          <WebView
+            style={ChurchLifeStyles.webView}
+            source={{
+              uri: "http://celebrationorl.org/college/",
+            }}
+            javaScriptEnabledAndroid={true}
+            scalesPageToFit={true}
+          />
+        </View>
       );
     }
 
@@ -144,3 +275,49 @@ class ChurchLifeArea extends Component {
 }
 
 export default ChurchLifeArea;
+
+
+// Posssibly needed missions info
+/*<View style={ChurchLifeStyles.primaryTextWrapper}>
+  <Text style={ChurchLifeStyles.primaryText}>
+    OUTREACH
+  </Text>
+</View>
+<Text style={ChurchLifeStyles.secondaryText}>
+  Through our local outreach initiatives, we partner
+  with several organizations and ministries, working
+  together to meet the practical and spiritual needs
+  of the communities we serve. Our goal is to be the
+  hands and feet of Jesus, driven by His heart to
+  serve others, while giving people the opportunity to
+  find true hope and fulfillment.
+</Text>
+<Text style={ChurchLifeStyles.secondaryText}>
+  For more info please email: outreach@celebrationorl.org
+</Text>
+
+<View style={ChurchLifeStyles.primaryTextWrapper}>
+  <Text style={ChurchLifeStyles.primaryText}>
+    MISSIONS
+  </Text>
+</View>
+<Text style={ChurchLifeStyles.secondaryText}>
+  Celebration Church is a global, multi-site church
+  with a mandate for Kingdom expansion. Our teams will
+  travel to countries where they can meet the needs of the
+  people as well as serve to strengthen the local church.
+  Strengthening the local church is an important aspect of
+  every mission’s team as it is the local church that will
+  be ministering daily to their community once the short term
+  mission’s team has departed.
+</Text>
+<Text style={ChurchLifeStyles.secondaryText}>
+  Our teams do a variety of ministry, which could range
+  from prayer walks, ministry to the poor, kids, youth,
+  men’s, women’s, marrieds ministry, construction projects,
+  medical outreaches, leadership development, ministry equipping,
+  community outreaches and more.
+</Text>
+<Text style={ChurchLifeStyles.secondaryText}>
+  If you would like information on upcoming missions trips please email: missions@celebrationorl.org
+</Text>*/

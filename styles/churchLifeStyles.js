@@ -1,5 +1,5 @@
 import React, { Dimensions } from 'react-native';
-var { width } = Dimensions.get('window');
+var { width, height } = Dimensions.get('window');
 import { black } from './colorStyles';
 
 const AboutStyles = React.StyleSheet.create({
@@ -15,9 +15,14 @@ const AboutStyles = React.StyleSheet.create({
     height: 300,
   },
 
+  webView: {
+    marginTop: -10,
+    height: height
+  },
+
   areaTitleText: {
     fontFamily: 'Avenir',
-    fontSize: 16,
+    fontSize: 14,
     color: 'lightgrey',
     textAlign: 'center',
     fontWeight: '800',
@@ -79,7 +84,7 @@ const AboutStyles = React.StyleSheet.create({
     fontSize: 16,
     fontWeight: '400',
     color: black,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
     opacity: 0.85
   },
 

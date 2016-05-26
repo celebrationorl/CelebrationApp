@@ -45,7 +45,11 @@ class ChurchLife extends Component {
       superSquadBtnStyle = {},
       fusejvBtnStyle = {},
       fuseBtnStyle = {},
-      communityGroupsBtnStyle ={};
+      communityGroupsBtnStyle ={},
+      sisterhoodBtnStyle = {},
+      menBtnStyle = {},
+      outreachMissionsBtnStyle = {},
+      collegeBtnStyle = {};
 
     if (churchLifeAreaType === 'preschool') {
       preschoolBtnStyle = {color: '#171717'}
@@ -59,6 +63,14 @@ class ChurchLife extends Component {
       fuseBtnStyle = {color: '#171717'}
     } else if (churchLifeAreaType === 'communityGroups') {
       communityGroupsBtnStyle = {color: '#171717'}
+    } else if (churchLifeAreaType === 'sisterhood') {
+      sisterhoodBtnStyle = {color: '#171717'}
+    } else if (churchLifeAreaType === 'men') {
+      menBtnStyle = {color: '#171717'}
+    } else if (churchLifeAreaType === 'outreachMissions') {
+      outreachMissionsBtnStyle = {color: '#171717'}
+    } else if (churchLifeAreaType === 'college') {
+      collegeBtnStyle = {color: '#171717'}
     }
 
     return (
@@ -69,21 +81,80 @@ class ChurchLife extends Component {
               <TouchableHighlight
                 onPress={() => this.setChurchLifeArea('preschool')}
                 >
-                <Text style={[ChurchLifeStyles.areaTitleText, preschoolBtnStyle]}>Preschool Nursery</Text>
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, preschoolBtnStyle]}
+                  >
+                  PRESCHOOL NURSERY
+                </Text>
               </TouchableHighlight>
             </View>
             <View style={ChurchLifeStyles.area}>
               <TouchableHighlight
                 onPress={() => this.setChurchLifeArea('kids')}
                 >
-                <Text style={[ChurchLifeStyles.areaTitleText, kidsBtnStyle]}>Kids</Text>
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, kidsBtnStyle]}
+                  >
+                  KIDS
+                </Text>
               </TouchableHighlight>
             </View>
             <View style={ChurchLifeStyles.area}>
               <TouchableHighlight
                 onPress={() => this.setChurchLifeArea('superSquad')}
                 >
-                <Text style={[ChurchLifeStyles.areaTitleText, superSquadBtnStyle]}>Super Squad</Text>
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, superSquadBtnStyle]}
+                  >
+                  SUPER SQUAD
+                </Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+
+          <View style={ChurchLifeStyles.row}>
+            <View style={ChurchLifeStyles.area}>
+              <TouchableHighlight
+                onPress={() => this.setChurchLifeArea('fuse')}
+                >
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, fuseBtnStyle]}
+                  >
+                  FUSE
+                </Text>
+              </TouchableHighlight>
+            </View>
+            <View style={ChurchLifeStyles.area}>
+              <TouchableHighlight
+                onPress={() => this.setChurchLifeArea('men')}
+                >
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, menBtnStyle]}
+                  >
+                  MEN
+                </Text>
+              </TouchableHighlight>
+            </View>
+            <View style={ChurchLifeStyles.area}>
+              <TouchableHighlight
+                onPress={() => this.setChurchLifeArea('college')}
+                >
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, collegeBtnStyle]}
+                  >
+                  COLLEGE
+                </Text>
+              </TouchableHighlight>
+            </View>
+            <View style={ChurchLifeStyles.area}>
+              <TouchableHighlight
+                onPress={() => this.setChurchLifeArea('communityGroups')}
+                >
+                <Text
+                  style={[ChurchLifeStyles.areaTitleText, communityGroupsBtnStyle]}
+                  >
+                  COMMUNITY GROUPS
+                </Text>
               </TouchableHighlight>
             </View>
           </View>
@@ -96,29 +167,29 @@ class ChurchLife extends Component {
                 <Text
                   style={[ChurchLifeStyles.areaTitleText, fusejvBtnStyle]}
                   >
-                  Fuse JV
+                  FUSE JV
                 </Text>
               </TouchableHighlight>
             </View>
             <View style={ChurchLifeStyles.area}>
               <TouchableHighlight
-                onPress={() => this.setChurchLifeArea('fuse')}
+                onPress={() => this.setChurchLifeArea('sisterhood')}
                 >
                 <Text
-                  style={[ChurchLifeStyles.areaTitleText, fuseBtnStyle]}
+                  style={[ChurchLifeStyles.areaTitleText, sisterhoodBtnStyle]}
                   >
-                  Fuse
+                  SISTERHOOD
                 </Text>
               </TouchableHighlight>
             </View>
             <View style={ChurchLifeStyles.area}>
               <TouchableHighlight
-                onPress={() => this.setChurchLifeArea('communityGroups')}
+                onPress={() => this.setChurchLifeArea('outreachMissions')}
                 >
                 <Text
-                  style={[ChurchLifeStyles.areaTitleText, communityGroupsBtnStyle]}
+                  style={[ChurchLifeStyles.areaTitleText, outreachMissionsBtnStyle]}
                   >
-                  Community Groups
+                  OUTREACH/MISSIONS
                 </Text>
               </TouchableHighlight>
             </View>
