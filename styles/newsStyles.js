@@ -6,7 +6,6 @@ const PrayerStyles = React.StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    paddingBottom: 20
   },
 
   webView: {
