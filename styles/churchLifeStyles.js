@@ -15,30 +15,85 @@ const AboutStyles = React.StyleSheet.create({
     height: 300,
   },
 
-  areaText: {
+  areaTitleText: {
     fontFamily: 'Avenir',
-    fontSize: 20,
-    color: black,
+    fontSize: 16,
+    color: 'lightgrey',
     textAlign: 'center',
     fontWeight: '800',
-    paddingTop: 85,
-    paddingBottom: 85
+  },
+
+  areaText: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    color: 'lightgrey',
+    textAlign: 'center',
+    fontWeight: '800',
+    paddingTop: 10,
+    paddingBottom: 10
   },
 
   areasWrapper: {
+    paddingTop: 10,
+    paddingBottom: 20,
     paddingRight: 15,
     paddingLeft: 15,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey'
   },
 
   area: {
-    padding: 35
+    paddingTop: 15,
   },
 
   row: {
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
+
+  body: {
+    paddingRight: 20,
+    paddingLeft: 20,
+    paddingTop: 30,
+    paddingBottom: 30,
+  },
+
+  primaryTextWrapper: {
+    borderBottomWidth: 2,
+    borderBottomColor: 'lightgrey'
+  },
+
+  primaryText: {
+    paddingBottom: 10,
+    fontFamily: 'Avenir',
+    fontSize: 18,
+    fontWeight: '800',
+    color: black,
+    alignSelf: 'center',
+  },
+
+  secondaryText: {
+    paddingTop: 12,
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    fontWeight: '400',
+    color: black,
+    alignSelf: 'center',
+    opacity: 0.85
+  },
+
+  graphicWrapper: {
+    alignSelf: 'center'
+  },
+
+  graphic: {
+    marginTop: 15,
+    marginBottom: 0,
+    height: 131,
+    width: 191
+  },
+
 
 });
 
