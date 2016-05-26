@@ -18,6 +18,7 @@ import Instagram from './Instagram';
 import Twitter from './Twitter';
 import Facebook from './Facebook';
 import CelebrationSite from './CelebrationSite';
+import ChurchLife from './ChurchLife';
 
 const iconSizes = 60,
   iconColor = '#171717';
@@ -53,6 +54,7 @@ class More extends Component {
 
     let modalContent = null;
 
+    // TODO: turn into switch statement
     if (modalType === 'about') {
       modalContent = (<About payload={aboutPayload} />)
     } else if (modalType === 'instagram') {
@@ -65,6 +67,8 @@ class More extends Component {
       modalContent = (<CelebrationSite />)
     } else if (modalType === 'email') {
       modalContent = (<Email />)
+    } else if (modalType === 'churchLife') {
+      modalContent = (<ChurchLife />)
     }
 
     return (
@@ -154,6 +158,29 @@ class More extends Component {
                 >
                 <Text style={MoreStyles.aboutBlockText}>
                   About
+                </Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+
+          <View style={MoreStyles.row}>
+            <View style={MoreStyles.nextStepsBlock}>
+              <TouchableHighlight
+                onPress={() => this.showModal('nextSteps')}
+                style={MoreStyles.instagramIcon}
+                >
+                <Text style={MoreStyles.nextStepsBlockText}>
+                  Next Steps
+                </Text>
+              </TouchableHighlight>
+            </View>
+            <View style={MoreStyles.churchLifeBlock}>
+              <TouchableHighlight
+                onPress={() => this.showModal('churchLife')}
+                style={MoreStyles.instagramIcon}
+                >
+                <Text style={MoreStyles.churchLifeBlockText}>
+                  Church Life
                 </Text>
               </TouchableHighlight>
             </View>

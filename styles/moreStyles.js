@@ -50,7 +50,23 @@ const MoreStyles = React.StyleSheet.create({
     color: moreblockBorderColor
   },
 
-  facebookBlock : {
+  nextStepsBlockText: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    fontWeight: '800',
+    color: moreblockBorderColor,
+    marginLeft: -7,
+    paddingRight: 7
+  },
+
+  churchLifeBlockText: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    fontWeight: '800',
+    color: moreblockBorderColor
+  },
+
+  facebookBlock: {
     borderTopWidth: 5,
     borderRightWidth: 2,
     borderBottomWidth: 3,
@@ -63,7 +79,7 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
-  instagramBlock : {
+  instagramBlock: {
     borderTopWidth: 5,
     borderRightWidth: 5,
     borderBottomWidth: 3,
@@ -76,7 +92,7 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
-  twitterBlock : {
+  twitterBlock: {
     borderTopWidth: 2,
     borderRightWidth: 2,
     borderBottomWidth: 5,
@@ -89,7 +105,7 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
-  mailBlock : {
+  mailBlock: {
     borderTopWidth: 2,
     borderRightWidth: 5,
     borderBottomWidth: 5,
@@ -102,7 +118,7 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
-  websiteBlock : {
+  websiteBlock: {
     borderTopWidth: 5,
     borderRightWidth: 3,
     borderBottomWidth: 5,
@@ -115,7 +131,7 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
-  aboutBlock : {
+  aboutBlock: {
     borderTopWidth: 5,
     borderRightWidth: 5,
     borderBottomWidth: 5,
@@ -128,8 +144,34 @@ const MoreStyles = React.StyleSheet.create({
     flexDirection: 'row'
   },
 
+  nextStepsBlock: {
+    borderTopWidth: 1,
+    borderRightWidth: 3,
+    borderBottomWidth: 5,
+    borderLeftWidth: 5,
+    paddingTop: 20,
+    paddingRight: 13.5,
+    paddingBottom: 20,
+    paddingLeft: 29,
+    borderColor: moreblockBorderColor,
+    flexDirection: 'row'
+  },
+
+  churchLifeBlock: {
+    borderTopWidth: 1,
+    borderRightWidth: 5,
+    borderBottomWidth: 5,
+    borderLeftWidth: 2,
+    paddingTop: 20,
+    paddingRight: 22,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    borderColor: moreblockBorderColor,
+    flexDirection: 'row'
+  },
+
   blocks: {
-    padding: 70,
+    padding: 40,
     alignItems: 'stretch'
   },
 
