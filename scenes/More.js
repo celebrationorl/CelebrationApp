@@ -50,11 +50,10 @@ class More extends Component {
 
   getModal() {
 
-    var { modalType, aboutPayload } = this.props;
+    var { modalType, aboutPayload, areaType } = this.props;
 
     let modalContent = null;
 
-    // TODO: turn into switch statement
     if (modalType === 'about') {
       modalContent = (<About payload={aboutPayload} />)
     } else if (modalType === 'instagram') {
