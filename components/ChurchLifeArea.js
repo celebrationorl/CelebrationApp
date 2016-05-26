@@ -26,6 +26,10 @@ var injectedMissionsWebViewJSCode = `
 
 import ChurchLifeStyles from '../styles/churchLifeStyles';
 
+var superSquadImage = require('../assets/img/church_life_areas/super_squad_graphic.png');
+var kidsImage = require('../assets/img/church_life_areas/kids_graphic.png');
+var preschoolImage = require('../assets/img/church_life_areas/preschool_graphic.png');
+
 class ChurchLifeArea extends Component {
 
   constructor(props, context) {
@@ -48,7 +52,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.graphicWrapper}>
             <Image
               style={ChurchLifeStyles.graphic}
-              source={require('../assets/img/church_life_areas/preschool_graphic.png')}
+              source={preschoolImage}
             />
           </View>
           <View style={ChurchLifeStyles.body}>
@@ -77,7 +81,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.graphicWrapper}>
             <Image
               style={ChurchLifeStyles.graphic}
-              source={require('../assets/img/church_life_areas/kids_graphic.png')}
+              source={kidsImage}
             />
           </View>
           <View style={ChurchLifeStyles.body}>
@@ -107,7 +111,7 @@ class ChurchLifeArea extends Component {
           <View style={ChurchLifeStyles.graphicWrapper}>
             <Image
               style={[ChurchLifeStyles.graphic, {height: 200}]}
-              source={require('../assets/img/church_life_areas/super_squad_graphic.png')}
+              source={superSquadImage}
             />
           </View>
           <View style={ChurchLifeStyles.body}>
