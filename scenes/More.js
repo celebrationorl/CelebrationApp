@@ -48,9 +48,24 @@ class More extends Component {
     })
   }
 
+  setMoreImageBar(title) {
+
+    store.dispatch({
+      type: 'SET_MORE_IMGBAR_TITLE',
+      moreImageBarTitle: title
+    })
+  }
+
+  getImageBarTitle() {
+
+    var { moreImageBarTitle } = this.state;
+    return moreImageBarTitle;
+
+  }
+
   getModal() {
 
-    var { modalType, aboutPayload, areaType } = this.props;
+    var { modalType, aboutPayload, areaType, } = this.props;
 
     let modalContent = null;
 
@@ -81,7 +96,11 @@ class More extends Component {
         <View style={MoreStyles.modalContainer}>
           <View style={MoreStyles.modalInnerContainer}>
             <TouchableHighlight
-              onPress={() => this.showModal('')}
+              onPress={() => {
+                  this.showModal('')
+                  this.setMoreImageBar('More')
+                }
+              }
               style={MoreStyles.modalCloseButton}>
               {CloseIcon}
             </TouchableHighlight>
@@ -99,13 +118,17 @@ class More extends Component {
 
         {this.getModal()}
 
-        <ImageBar title="More" />
+        <ImageBar title={this.getImageBarTitle()} />
 
         <View style={MoreStyles.blocks}>
           <View style={MoreStyles.row}>
             <View style={MoreStyles.facebookBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('facebook')}
+                onPress={() => {
+                    this.showModal('facebook')
+                    this.setMoreImageBar('Facebook')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 {FacebookIcon}
@@ -113,7 +136,11 @@ class More extends Component {
             </View>
             <View style={MoreStyles.instagramBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('instagram')}
+                onPress={() => {
+                    this.showModal('instagram')
+                    this.setMoreImageBar('Instagram')
+                  }
+                }
                 style={MoreStyles.instagramIcon}>
                 {InstagramIcon}
               </TouchableHighlight>
@@ -123,7 +150,11 @@ class More extends Component {
           <View style={MoreStyles.row}>
             <View style={MoreStyles.twitterBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('twitter')}
+                onPress={() => {
+                    this.showModal('twitter')
+                    this.setMoreImageBar('Twitter')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 {TwitterIcon}
@@ -131,7 +162,11 @@ class More extends Component {
             </View>
             <View style={MoreStyles.mailBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('email')}
+                onPress={() => {
+                    this.showModal('email')
+                    this.setMoreImageBar('Contact')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 {MailIcon}
@@ -142,7 +177,11 @@ class More extends Component {
           <View style={MoreStyles.separatedRow}>
             <View style={MoreStyles.websiteBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('celebration')}
+                onPress={() => {
+                    this.showModal('celebration')
+                    this.setMoreImageBar('Celebration Website')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 <Text style={MoreStyles.websiteBlockText}>
@@ -152,7 +191,11 @@ class More extends Component {
             </View>
             <View style={MoreStyles.aboutBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('about')}
+                onPress={() => {
+                    this.showModal('about')
+                    this.setMoreImageBar('About')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 <Text style={MoreStyles.aboutBlockText}>
@@ -165,7 +208,11 @@ class More extends Component {
           <View style={MoreStyles.row}>
             <View style={MoreStyles.nextStepsBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('nextSteps')}
+                onPress={() => {
+                    this.showModal('nextSteps')
+                    this.setMoreImageBar('Next Steps')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 <Text style={MoreStyles.nextStepsBlockText}>
@@ -175,7 +222,11 @@ class More extends Component {
             </View>
             <View style={MoreStyles.churchLifeBlock}>
               <TouchableHighlight
-                onPress={() => this.showModal('churchLife')}
+                onPress={() => {
+                    this.showModal('churchLife')
+                    this.setMoreImageBar('Church Life')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 <Text style={MoreStyles.churchLifeBlockText}>

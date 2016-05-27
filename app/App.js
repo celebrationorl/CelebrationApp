@@ -15,7 +15,7 @@ import More from '../scenes/More';
 import Instagram from '../scenes/Instagram';
 
 import store from '../redux/appStore';
-import scenesData from '../redux/scenesData';
+import scenesData from '../redux/database/scenesData';
 
 import TabBarStyles from '../styles/tabBarStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
