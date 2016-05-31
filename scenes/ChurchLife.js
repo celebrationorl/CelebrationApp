@@ -4,7 +4,7 @@ import React, {
   Text,
   Image,
   ScrollView,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 
 import ChurchLifeStyles from '../styles/churchLifeStyles';
@@ -78,7 +78,7 @@ class ChurchLife extends Component {
         <View style={ChurchLifeStyles.areasWrapper}>
           <View style={ChurchLifeStyles.row}>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('preschool')}
                 >
                 <Text
@@ -86,10 +86,10 @@ class ChurchLife extends Component {
                   >
                   PRESCHOOL NURSERY
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('kids')}
                 >
                 <Text
@@ -97,10 +97,10 @@ class ChurchLife extends Component {
                   >
                   KIDS
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('superSquad')}
                 >
                 <Text
@@ -108,13 +108,13 @@ class ChurchLife extends Component {
                   >
                   SUPER SQUAD
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={ChurchLifeStyles.row}>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('fuse')}
                 >
                 <Text
@@ -122,10 +122,10 @@ class ChurchLife extends Component {
                   >
                   FUSE
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('men')}
                 >
                 <Text
@@ -133,10 +133,10 @@ class ChurchLife extends Component {
                   >
                   MEN
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('college')}
                 >
                 <Text
@@ -144,10 +144,10 @@ class ChurchLife extends Component {
                   >
                   COLLEGE
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('communityGroups')}
                 >
                 <Text
@@ -155,13 +155,13 @@ class ChurchLife extends Component {
                   >
                   COMMUNITY GROUPS
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={ChurchLifeStyles.row}>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('fusejv')}
                 >
                 <Text
@@ -169,10 +169,10 @@ class ChurchLife extends Component {
                   >
                   FUSE JV
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('sisterhood')}
                 >
                 <Text
@@ -180,10 +180,10 @@ class ChurchLife extends Component {
                   >
                   SISTERHOOD
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={ChurchLifeStyles.area}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => this.setChurchLifeArea('outreachMissions')}
                 >
                 <Text
@@ -191,7 +191,7 @@ class ChurchLife extends Component {
                   >
                   OUTREACH/MISSIONS
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
