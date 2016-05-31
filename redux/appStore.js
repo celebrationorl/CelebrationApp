@@ -5,13 +5,15 @@ import {
   GET_PAGE,
   SHOW_MODAL,
   SET_CHURCH_LIFE_AREA,
+  SET_NEXT_STEPS_AREA,
   SET_MORE_IMGBAR_TITLE
 } from './appActions';
 
 var initialState = {
   ...scenesData.pages,
   modalType: '',
-  churchLifeAreaType: 'preschool',
+  churchLifeAreaType: 'communityGroups',
+  nextStepsAreaType: 'communityGroups',
   moreImageBarTitle: 'More',
 }
 
@@ -19,8 +21,7 @@ var initialState = {
  * reducers
  */
 function appStore(state = initialState, action) {
-  console.log('store action: ', action.moreImageBarTitle);
-  console.log('store state: ', state);
+
   switch (action.type) {
     case GET_PAGE:
       return Object.assign({}, state, {
@@ -38,9 +39,14 @@ function appStore(state = initialState, action) {
       return Object.assign({}, state, {
         churchLifeAreaType: action.churchLifeAreaType
       })
+    case SET_NEXT_STEPS_AREA:
+      return Object.assign({}, state, {
+        nextStepsAreaType: action.nextStepsAreaType
+      })
     default:
       return state;
   }
+
 }
 
 /*

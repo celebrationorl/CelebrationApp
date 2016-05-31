@@ -19,6 +19,7 @@ import Twitter from './Twitter';
 import Facebook from './Facebook';
 import CelebrationSite from './CelebrationSite';
 import ChurchLife from './ChurchLife';
+import NextSteps from './NextSteps';
 
 const iconSizes = 60,
   iconColor = '#171717';
@@ -83,6 +84,8 @@ class More extends Component {
       modalContent = (<Email />)
     } else if (modalType === 'churchLife') {
       modalContent = (<ChurchLife />)
+    } else if (modalType === 'nextSteps') {
+      modalContent = (<NextSteps />)
     }
 
     return (

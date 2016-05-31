@@ -5,6 +5,7 @@
 export const GET_PAGE = 'GET_PAGE';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const SET_CHURCH_LIFE_AREA = 'SET_CHURCH_LIFE_AREA';
+export const SET_NEXT_STEPS_AREA = 'SET_NEXT_STEPS_AREA';
 export const SET_MORE_IMGBAR_TITLE = 'SET_MORE_IMGBAR_TITLE';
 
 /*
@@ -23,6 +24,10 @@ export function showModal(modalType) {
 
 export function getChurchLifeArea(churchLifeAreaType) {
   return { type: SET_CHURCH_LIFE_AREA, churchLifeAreaType }
+}
+
+export function getNextStepsArea(nextStepsAreaType) {
+  return { type: SET_NEXT_STEPS_AREA, nextStepsAreaType }
 }
 
 /**
