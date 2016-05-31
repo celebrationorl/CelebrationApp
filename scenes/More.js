@@ -2,7 +2,7 @@ import React, {
   Component,
   View,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   Modal
 } from 'react-native';
 
@@ -98,7 +98,7 @@ class More extends Component {
         >
         <View style={MoreStyles.modalContainer}>
           <View style={MoreStyles.modalInnerContainer}>
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={() => {
                   this.showModal('')
                   this.setMoreImageBar('More')
@@ -106,7 +106,7 @@ class More extends Component {
               }
               style={MoreStyles.modalCloseButton}>
               {CloseIcon}
-            </TouchableHighlight>
+            </TouchableOpacity>
             {modalContent}
           </View>
         </View>
@@ -126,7 +126,7 @@ class More extends Component {
         <View style={MoreStyles.blocks}>
           <View style={MoreStyles.row}>
             <View style={MoreStyles.facebookBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('facebook')
                     this.setMoreImageBar('Facebook')
@@ -135,10 +135,10 @@ class More extends Component {
                 style={MoreStyles.facebookIcon}
                 >
                 {FacebookIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.instagramBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('instagram')
                     this.setMoreImageBar('Instagram')
@@ -146,13 +146,13 @@ class More extends Component {
                 }
                 style={MoreStyles.instagramIcon}>
                 {InstagramIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={MoreStyles.row}>
             <View style={MoreStyles.twitterBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('twitter')
                     this.setMoreImageBar('Twitter')
@@ -161,10 +161,10 @@ class More extends Component {
                 style={MoreStyles.facebookIcon}
                 >
                 {TwitterIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.mailBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('email')
                     this.setMoreImageBar('Contact')
@@ -173,13 +173,13 @@ class More extends Component {
                 style={MoreStyles.instagramIcon}
                 >
                 {MailIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={MoreStyles.separatedRow}>
             <View style={MoreStyles.websiteBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('celebration')
                     this.setMoreImageBar('Celebration Website')
@@ -190,10 +190,10 @@ class More extends Component {
                 <Text style={MoreStyles.websiteBlockText}>
                   Website
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.aboutBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('about')
                     this.setMoreImageBar('About')
@@ -204,13 +204,13 @@ class More extends Component {
                 <Text style={MoreStyles.aboutBlockText}>
                   About
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={MoreStyles.row}>
             <View style={MoreStyles.nextStepsBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('nextSteps')
                     this.setMoreImageBar('Next Steps')
@@ -221,10 +221,10 @@ class More extends Component {
                 <Text style={MoreStyles.nextStepsBlockText}>
                   Next Steps
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.churchLifeBlock}>
-              <TouchableHighlight
+              <TouchableOpacity
                 onPress={() => {
                     this.showModal('churchLife')
                     this.setMoreImageBar('Church Life')
@@ -235,7 +235,7 @@ class More extends Component {
                 <Text style={MoreStyles.churchLifeBlockText}>
                   Church Life
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
