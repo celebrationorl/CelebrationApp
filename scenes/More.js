@@ -25,9 +25,9 @@ const iconSizes = 60,
   iconColor = '#171717';
 
 const FacebookIcon = (<Icon name="social-facebook" size={iconSizes} color={iconColor} />);
-const InstagramIcon = (<Icon name="social-instagram" size={iconSizes} color={iconColor} />);
+const InstagramIcon = (<Ionicon name="logo-instagram" size={iconSizes} color={iconColor} />);
 const TwitterIcon = (<Icon name="social-twitter" size={iconSizes} color={iconColor} />);
-const MailIcon = (<Icon name="mail" size={iconSizes} color={iconColor} />);
+const MailIcon = (<Ionicon name="md-mail" size={iconSizes} color={iconColor} />);
 const CloseIcon = (<Ionicon name="ios-close-outline" size={45 } color={'white'} />);
 
 class More extends Component {

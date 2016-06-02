@@ -8,6 +8,10 @@ import React, {
 import NewsStyles from '../styles/newsStyles';
 import ImageBar from '../components/ImageBar';
 
+import Icon from 'react-native-vector-icons/EvilIcons';
+
+const SpinnerIcon = (<Icon name="spinner-3" size={24} color="#171717" />)
+
 var injectedJSCode = `
 
   document.querySelector(".page-header").style.display = 'none';
@@ -45,11 +49,15 @@ class News extends Component {
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
+        <View style={NewsStyles.icon}>
+          {SpinnerIcon}
+        </View>
         <WebView
           style={NewsStyles.webView}
           source={{
             uri: "http://celebrationorl.org/category/updates/",
           }}
+          onLoad={() => console.log('loaded')}
           injectedJavaScript={injectedJSCode}
           javaScriptEnabledAndroid={true}
           scalesPageToFit={true}
