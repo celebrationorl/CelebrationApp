@@ -58,6 +58,7 @@ const AboutStyles = React.StyleSheet.create({
   },
 
   body: {
+    fontFamily: 'Avenir',
     paddingRight: 20,
     paddingLeft: 20,
     paddingTop: 30,
