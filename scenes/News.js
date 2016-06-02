@@ -6,6 +6,7 @@ import React, {
 } from 'react-native';
 
 import NewsStyles from '../styles/newsStyles';
+import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import ImageBar from '../components/ImageBar';
 
 import * as Animatable from 'react-native-animatable';
@@ -46,21 +47,31 @@ class News extends Component {
     super(props, context);
   }
 
+  // TODO: Figure out how to remove this when page loaded
+  getLoadingIndicator() {
+    return (
+      <View style={WebviewOverlayStyles.webviewOverlay}>
+        <Text style={WebviewOverlayStyles.loadingTitle}>
+          LOADING CELEBRATION NEWS
+        </Text>
+        <Animatable.View
+          animation="rotate"
+          easing="linear"
+          iterationCount="infinite"
+          style={WebviewOverlayStyles.animator}
+          >
+          {SpinnerIcon}
+        </Animatable.View>
+      </View>
+    );
+  }
+
   render() {
 
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
-        <View style={NewsStyles.icon}>
-          <Animatable.View
-            animation="rotate"
-            easing="linear"
-            iterationCount="infinite"
-            style={NewsStyles.iconWrapper}
-            >
-            {SpinnerIcon}
-          </Animatable.View>
-        </View>
+        {this.getLoadingIndicator()}
         <WebView
           style={NewsStyles.webView}
           source={{

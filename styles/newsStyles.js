@@ -8,12 +8,6 @@ const PrayerStyles = React.StyleSheet.create({
     justifyContent: 'flex-start',
   },
 
-  iconWrapper: {
-    alignSelf: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  }
-
 });
 
 export default PrayerStyles;
