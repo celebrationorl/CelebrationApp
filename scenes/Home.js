@@ -2,7 +2,7 @@ import React, {
   Component,
   View,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   Image
 } from 'react-native';
 
@@ -46,16 +46,16 @@ class Home extends Component {
   <Text style={HomeStyles.body}>
     {payload.body}
   </Text>
-  <TouchableHighlight
+  <TouchableOpacity
     onPress={this.props.onSceneSwitch}
     style={HomeStyles.button}>
     <Text style={HomeStyles.buttonText}>About</Text>
-  </TouchableHighlight>
-  <TouchableHighlight
+  </TouchableOpacity>
+  <TouchableOpacity
     onPress={this.props.onSceneInstagram}
     style={HomeStyles.button}>
     <Text style={HomeStyles.buttonText}>Instagram</Text>
-  </TouchableHighlight>
+  </TouchableOpacity>
 </Image>
 */
 

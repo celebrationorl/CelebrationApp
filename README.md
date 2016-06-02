@@ -54,6 +54,7 @@ For more usage examples and official docs see packages <a href="https://github.c
 - for use in app see code snippet below or see the github page for `react-native-vector-icons`
 
 ```
+import Icon from 'react-native-vector-icons/<icon-library>'; (icon library example: Ionicons, FontAwesome etc...)
 const VisitIcon = (<Icon name="map-marker" size={20} color="black" />)
 
 render() {

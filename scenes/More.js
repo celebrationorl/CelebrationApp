@@ -2,7 +2,7 @@ import React, {
   Component,
   View,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   Modal
 } from 'react-native';
 
@@ -18,6 +18,8 @@ import Instagram from './Instagram';
 import Twitter from './Twitter';
 import Facebook from './Facebook';
 import CelebrationSite from './CelebrationSite';
+import ChurchLife from './ChurchLife';
+import NextSteps from './NextSteps';
 
 const iconSizes = 60,
   iconColor = '#171717';
@@ -47,9 +49,24 @@ class More extends Component {
     })
   }
 
+  setMoreImageBar(title) {
+
+    store.dispatch({
+      type: 'SET_MORE_IMGBAR_TITLE',
+      moreImageBarTitle: title
+    })
+  }
+
+  getImageBarTitle() {
+
+    var { moreImageBarTitle } = this.state;
+    return moreImageBarTitle;
+
+  }
+
   getModal() {
 
-    var { modalType, aboutPayload } = this.props;
+    var { modalType, aboutPayload, areaType, } = this.props;
 
     let modalContent = null;
 
@@ -65,6 +82,10 @@ class More extends Component {
       modalContent = (<CelebrationSite />)
     } else if (modalType === 'email') {
       modalContent = (<Email />)
+    } else if (modalType === 'churchLife') {
+      modalContent = (<ChurchLife />)
+    } else if (modalType === 'nextSteps') {
+      modalContent = (<NextSteps />)
     }
 
     return (
@@ -77,11 +98,15 @@ class More extends Component {
         >
         <View style={MoreStyles.modalContainer}>
           <View style={MoreStyles.modalInnerContainer}>
-            <TouchableHighlight
-              onPress={() => this.showModal('')}
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('')
+                  this.setMoreImageBar('More')
+                }
+              }
               style={MoreStyles.modalCloseButton}>
               {CloseIcon}
-            </TouchableHighlight>
+            </TouchableOpacity>
             {modalContent}
           </View>
         </View>
@@ -96,66 +121,121 @@ class More extends Component {
 
         {this.getModal()}
 
-        <ImageBar title="More" />
+        <ImageBar title={this.getImageBarTitle()} />
 
         <View style={MoreStyles.blocks}>
           <View style={MoreStyles.row}>
             <View style={MoreStyles.facebookBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('facebook')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('facebook')
+                    this.setMoreImageBar('Facebook')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 {FacebookIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.instagramBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('instagram')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('instagram')
+                    this.setMoreImageBar('Instagram')
+                  }
+                }
                 style={MoreStyles.instagramIcon}>
                 {InstagramIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={MoreStyles.row}>
             <View style={MoreStyles.twitterBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('twitter')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('twitter')
+                    this.setMoreImageBar('Twitter')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 {TwitterIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.mailBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('email')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('email')
+                    this.setMoreImageBar('Contact')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 {MailIcon}
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
           </View>
 
           <View style={MoreStyles.separatedRow}>
             <View style={MoreStyles.websiteBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('celebration')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('celebration')
+                    this.setMoreImageBar('Celebration Website')
+                  }
+                }
                 style={MoreStyles.facebookIcon}
                 >
                 <Text style={MoreStyles.websiteBlockText}>
                   Website
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
             </View>
             <View style={MoreStyles.aboutBlock}>
-              <TouchableHighlight
-                onPress={() => this.showModal('about')}
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('about')
+                    this.setMoreImageBar('About')
+                  }
+                }
                 style={MoreStyles.instagramIcon}
                 >
                 <Text style={MoreStyles.aboutBlockText}>
                   About
                 </Text>
-              </TouchableHighlight>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={MoreStyles.row}>
+            <View style={MoreStyles.nextStepsBlock}>
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('nextSteps')
+                    this.setMoreImageBar('Next Steps')
+                  }
+                }
+                style={MoreStyles.instagramIcon}
+                >
+                <Text style={MoreStyles.nextStepsBlockText}>
+                  Next Steps
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={MoreStyles.churchLifeBlock}>
+              <TouchableOpacity
+                onPress={() => {
+                    this.showModal('churchLife')
+                    this.setMoreImageBar('Church Life')
+                  }
+                }
+                style={MoreStyles.instagramIcon}
+                >
+                <Text style={MoreStyles.churchLifeBlockText}>
+                  Church Life
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
