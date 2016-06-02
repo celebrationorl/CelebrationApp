@@ -1,10 +1,11 @@
-import React from 'react-native';
+import React, { Dimensions } from 'react-native';
+var { height, width } = Dimensions.get('window');
 
 const VisitStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
 
   title: {
@@ -37,7 +38,8 @@ const VisitStyles = React.StyleSheet.create({
     marginLeft: 10,
     marginBottom: 15,
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    textAlign: 'center'
   },
 
   map: {
@@ -45,7 +47,21 @@ const VisitStyles = React.StyleSheet.create({
     marginTop: 10,
     borderWidth: 2,
     borderColor: '#eeeeee'
-  }
+  },
+
+  androidMapGraphicWrapper: {
+    alignSelf: 'center'
+  },
+
+  androidMapGraphic: {
+    marginTop: 15,
+    marginBottom: 0,
+    width: width-60,
+    height: 350,
+    borderRadius: 200,
+    borderWidth: 4,
+    borderColor: 'black'
+  },
 
 });
 

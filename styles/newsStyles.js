@@ -1,5 +1,5 @@
 import React, { Dimensions } from 'react-native';
-var { height } = Dimensions.get('window');
+var { height, width } = Dimensions.get('window');
 
 const PrayerStyles = React.StyleSheet.create({
 
@@ -7,10 +7,6 @@ const PrayerStyles = React.StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
   },
-
-  webView: {
-    height: height
-  }
 
 });
 
