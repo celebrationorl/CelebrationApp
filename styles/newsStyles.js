@@ -8,8 +8,10 @@ const PrayerStyles = React.StyleSheet.create({
     justifyContent: 'flex-start',
   },
 
-  icon: {
-    transform: [{rotate: '50deg'}],
+  iconWrapper: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
   }
 
 });

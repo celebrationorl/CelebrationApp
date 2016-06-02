@@ -8,9 +8,11 @@ import React, {
 import NewsStyles from '../styles/newsStyles';
 import ImageBar from '../components/ImageBar';
 
+import * as Animatable from 'react-native-animatable';
+
 import Icon from 'react-native-vector-icons/EvilIcons';
 
-const SpinnerIcon = (<Icon name="spinner-3" size={24} color="#171717" />)
+const SpinnerIcon = (<Icon name="spinner-3" size={50} color="#171717" />)
 
 var injectedJSCode = `
 
@@ -50,7 +52,14 @@ class News extends Component {
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
         <View style={NewsStyles.icon}>
-          {SpinnerIcon}
+          <Animatable.View
+            animation="rotate"
+            easing="linear"
+            iterationCount="infinite"
+            style={NewsStyles.iconWrapper}
+            >
+            {SpinnerIcon}
+          </Animatable.View>
         </View>
         <WebView
           style={NewsStyles.webView}
