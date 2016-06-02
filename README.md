@@ -6,7 +6,10 @@
 - run `npm start` in root after npm install is finished
 - open up separate terminal window and run `react-native run-<platform-here>` (platform here should be 'ios' or 'android')
 
-You will need iOS Simulator and XCode to run app.
+You will need iOS Simulator and XCode to run app and for Android you will need a device or emulator (https://www.genymotion.com/)
+
+### Technical Preferences
+- avoid making seperations between ios and android in code
 
 ---
 
