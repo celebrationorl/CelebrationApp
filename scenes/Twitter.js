@@ -1,11 +1,11 @@
 import React, {
   Component,
   View,
-  WebView,
   Text
 } from 'react-native';
 
 import TwitterStyles from '../styles/twitterStyles';
+import Weblay from '../components/Weblay';
 
 class Twitter extends Component {
 
@@ -17,13 +17,11 @@ class Twitter extends Component {
 
     return (
       <View>
-        <WebView
-          style={TwitterStyles.webView}
-          source={{
-            uri: 'https://twitter.com/CelebrationORL',
-          }}
-          scalesPageToFit={true}
-        />
+        <Weblay
+          type="twitter"
+          title="LOADING CELEBRATION TWITTER"
+          uri="https://twitter.com/CelebrationORL"
+          />
       </View>
     );
   }

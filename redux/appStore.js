@@ -22,7 +22,10 @@ var initialState = {
     give: false,
     missions: false,
     college: false,
-    website: false
+    website: false,
+    instagram: false,
+    facebook: false,
+    twitter: false
   }
 }
 
@@ -30,8 +33,6 @@ var initialState = {
  * reducers
  */
 function appStore(state = initialState, action) {
-
-  console.log(action);
 
   switch (action.type) {
     case GET_PAGE:

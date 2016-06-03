@@ -81,8 +81,8 @@ class Weblay extends Component {
           }}
           onLoad={() => this.onWebviewLoad(type)}
           injectedJavaScript={this.props.injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
+          javaScriptEnabledAndroid
+          scalesPageToFit
         />
       </View>
     );

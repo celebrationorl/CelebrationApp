@@ -1,11 +1,11 @@
 import React, {
   Component,
   View,
-  WebView,
   Text
 } from 'react-native';
 
 import FacebookStyles from '../styles/facebookStyles';
+import Weblay from '../components/Weblay';
 
 class Facebook extends Component {
 
@@ -17,13 +17,11 @@ class Facebook extends Component {
 
     return (
       <View>
-        <WebView
-          style={FacebookStyles.webView}
-          source={{
-            uri: 'https://www.facebook.com/CelebrationOrl/',
-          }}
-          scalesPageToFit={true}
-        />
+        <Weblay
+          type="facebook"
+          title="LOADING CELEBRATION FACEBOOK"
+          uri="https://www.facebook.com/CelebrationOrl/"
+          />
       </View>
     );
   }

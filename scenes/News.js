@@ -10,12 +10,6 @@ import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import ImageBar from '../components/ImageBar';
 import Weblay from '../components/Weblay';
 
-import * as Animatable from 'react-native-animatable';
-
-import Icon from 'react-native-vector-icons/EvilIcons';
-
-const SpinnerIcon = (<Icon name="spinner-3" size={50} color="#171717" />)
-
 var injectedJSCode = `
 
   document.querySelector(".page-header").style.display = 'none';
