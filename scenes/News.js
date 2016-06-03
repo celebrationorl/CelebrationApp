@@ -45,8 +45,6 @@ class News extends Component {
 
   render() {
 
-    console.log(this.refs.webview);
-
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
