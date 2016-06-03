@@ -69,3 +69,30 @@ render() {
     );
   }
 ```
+
+#### Use of <a href="https://github.com/oblador/react-native-animatable">react-native-animatable</a>
+*this is an npm package and is required for use in this project, if you are using `<Weblay />` component (webview with loading indicator).*
+
+**Use in app:**
+- used for all and any animations in app
+- used for webview loading indicator in `<Weblay />` component
+
+```
+import * as Animatable from 'react-native-animatable';
+
+render() {
+    return (
+      <View>
+        {/* Animatable.<type> (type examples: View, Image, Text) */}
+        <Animatable.View
+          animation="rotate"
+          easing="linear"
+          iterationCount="infinite"
+          style={WebviewOverlayStyles.animator}
+          >
+          {<animated-element>}
+        </Animatable.View>
+      </View>  
+    );
+  }
+```
