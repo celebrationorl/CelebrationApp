@@ -6,6 +6,7 @@ import React, {
 } from 'react-native';
 
 import CelebrationStyles from '../styles/celebrationStyles';
+import Weblay from '../components/Weblay';
 
 class CelebrationSite extends Component {
 
@@ -16,14 +17,12 @@ class CelebrationSite extends Component {
   render() {
 
     return (
-      <View>
-        <WebView
-          style={CelebrationStyles.webView}
-          source={{
-            uri: 'http://celebrationorl.org/',
-          }}
-          scalesPageToFit={true}
-        />
+      <View style={CelebrationStyles.container}>
+        <Weblay
+          type="website"
+          title="LOADING CELEBRATION WEBSITE"
+          uri="http://celebrationorl.org/"
+          />
       </View>
     );
   }

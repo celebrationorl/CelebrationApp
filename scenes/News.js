@@ -8,6 +8,7 @@ import React, {
 import NewsStyles from '../styles/newsStyles';
 import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import ImageBar from '../components/ImageBar';
+import Weblay from '../components/Weblay';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -47,41 +48,17 @@ class News extends Component {
     super(props, context);
   }
 
-  // TODO: Figure out how to remove this when page loaded
-  getLoadingIndicator() {
-    return (
-      <View style={WebviewOverlayStyles.webviewOverlay}>
-        <Text style={WebviewOverlayStyles.loadingTitle}>
-          LOADING CELEBRATION NEWS
-        </Text>
-        <Animatable.View
-          animation="rotate"
-          easing="linear"
-          iterationCount="infinite"
-          style={WebviewOverlayStyles.animator}
-          >
-          {SpinnerIcon}
-        </Animatable.View>
-      </View>
-    );
-  }
-
   render() {
 
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
-        {this.getLoadingIndicator()}
-        <WebView
-          style={NewsStyles.webView}
-          source={{
-            uri: "http://celebrationorl.org/category/updates/",
-          }}
-          onLoad={() => console.log('loaded')}
-          injectedJavaScript={injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
-        />
+        <Weblay
+          type="news"
+          title="LOADING CELEBRATION NEWS"
+          uri="http://celebrationorl.org/category/updates/"
+          injectedJSCode={injectedJSCode}
+          />
       </View>
     );
   }
