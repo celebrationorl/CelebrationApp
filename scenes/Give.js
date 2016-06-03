@@ -1,7 +1,6 @@
 import React, {
   Component,
   View,
-  WebView
 } from 'react-native';
 
 import GiveStyles from '../styles/giveStyles';
@@ -39,6 +38,8 @@ class Give extends Component {
           title="LOADING CELEBRATION GIVING"
           uri="http://celebrationorl.org/giving-information/"
           injectedJSCode={injectedJSCode}
+          hasBackNav
+          backNavText="BACK"
           />
       </View>
     )

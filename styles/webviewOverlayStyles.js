@@ -10,6 +10,28 @@ const WebViewOverlayStyles = React.StyleSheet.create({
     backgroundColor: 'white'
   },
 
+  backNavIcon: {
+    marginTop: 5,
+    paddingRight: 20,
+    paddingLeft: 15,
+    alignSelf: 'flex-start',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey',
+    width: width
+  },
+
+  backNavText: {
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+    fontSize: 18,
+    marginTop: -33,
+    marginLeft: 35,
+    fontWeight: '600',
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    color: black
+  },
+
   loadingTitle: {
     marginBottom: 20,
     fontFamily: 'Avenir',
