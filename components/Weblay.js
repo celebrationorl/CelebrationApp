@@ -32,11 +32,30 @@ class Weblay extends Component {
     injectedJSCode: React.PropTypes.string,
     type: React.PropTypes.string,
     backNavText: React.PropTypes.string,
-    hasBackNav: React.PropTypes.bool
+    hasBackNav: React.PropTypes.bool,
+    detailedPresentation: React.PropTypes.object
   }
 
   getLoadingIndicator(title) {
-    return (
+
+    return this.props.detailedPresentation ? (
+      <View>
+        {this.props.detailedPresentation}
+        <View style={WebviewOverlayStyles.webviewOverlayPresentation}>
+          <Text style={WebviewOverlayStyles.loadingTitle}>
+            {title}
+          </Text>
+          <Animatable.View
+            animation="rotate"
+            easing="linear"
+            iterationCount="infinite"
+            style={WebviewOverlayStyles.animator}
+            >
+            {SpinnerIcon}
+          </Animatable.View>
+        </View>
+      </View>
+    ) : (
       <View style={WebviewOverlayStyles.webviewOverlay}>
         <Text style={WebviewOverlayStyles.loadingTitle}>
           {title}
