@@ -6,7 +6,9 @@ import React, {
 } from 'react-native';
 
 import NewsStyles from '../styles/newsStyles';
+import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import ImageBar from '../components/ImageBar';
+import Weblay from '../components/Weblay';
 
 var injectedJSCode = `
 
@@ -45,15 +47,12 @@ class News extends Component {
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
-        <WebView
-          style={NewsStyles.webView}
-          source={{
-            uri: "http://celebrationorl.org/category/updates/",
-          }}
-          injectedJavaScript={injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
-        />
+        <Weblay
+          type="news"
+          title="LOADING CELEBRATION NEWS"
+          uri="http://celebrationorl.org/category/updates/"
+          injectedJSCode={injectedJSCode}
+          />
       </View>
     );
   }

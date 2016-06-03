@@ -1,11 +1,11 @@
 import React, {
   Component,
   View,
-  WebView,
   Text
 } from 'react-native';
 
 import InstagramStyles from '../styles/instagramStyles';
+import Weblay from '../components/Weblay';
 
 class Instagram extends Component {
 
@@ -17,13 +17,11 @@ class Instagram extends Component {
 
     return (
       <View>
-        <WebView
-          style={InstagramStyles.webView}
-          source={{
-            uri: 'https://www.instagram.com/celebrationorl/',
-          }}
-          scalesPageToFit={true}
-        />
+        <Weblay
+          type="instagram"
+          title="LOADING CELEBRATION INSTAGRAM"
+          uri="https://www.instagram.com/celebrationorl/"
+          />
       </View>
     );
   }
