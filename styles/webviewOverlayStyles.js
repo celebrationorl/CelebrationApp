@@ -51,6 +51,15 @@ const WebViewOverlayStyles = React.StyleSheet.create({
     justifyContent: 'center',
   },
 
+  webviewOverlayPresentation: {
+    paddingTop: 30,
+    paddingRight: 200,
+    paddingBottom: 350,
+    paddingLeft: 200,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+
   animator: {
     alignSelf: 'center',
     justifyContent: 'center',

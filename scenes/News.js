@@ -2,6 +2,7 @@ import React, {
   Component,
   View,
   Text,
+  Image
 } from 'react-native';
 
 import NewsStyles from '../styles/newsStyles';
@@ -43,6 +44,20 @@ class News extends Component {
     super(props, context);
   }
 
+  getDetailedPresentation() {
+    return (
+      <View style={NewsStyles.presentation}>
+        <Image
+          style={NewsStyles.logo}
+          source={require('../assets/img/celebration_logo.png')}
+        />
+        <Text style={NewsStyles.presentationText}>
+          WELCOME TO CELEBRATION CHURCH
+        </Text>
+      </View>
+    )
+  }
+
   render() {
 
     return (
@@ -52,6 +67,7 @@ class News extends Component {
           hasBackNav
           backNavText="BACK"
           type="news"
+          detailedPresentation={this.getDetailedPresentation()}
           title="LOADING CELEBRATION NEWS"
           uri="http://celebrationorl.org/category/updates/"
           injectedJSCode={injectedJSCode}
