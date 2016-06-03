@@ -2,7 +2,6 @@ import React, {
   Component,
   View,
   Text,
-  WebView
 } from 'react-native';
 
 import NewsStyles from '../styles/newsStyles';
@@ -16,23 +15,25 @@ var injectedJSCode = `
   document.querySelector("#content-wrap").style.marginTop = '70px';
   document.querySelector("#footer-callout-wrap").style.display = 'none';
 
-  var newsBlocks = document.querySelector("div");
+  // var newsBlocks = document.querySelector("div");
+  //
+  // var button = document.createElement('BUTTON');
+  // button.onclick = function() {
+  //   window.history.back();
+  // };
+  //
+  // var buttonText = document.createTextNode("❮ ALL NEWS");
+  // button.appendChild(buttonText);
+  //
+  // button.style.height = '50px';
+  // button.style.width = '100%';
+  // button.style.position = 'fixed';
+  // button.style.opacity = '0.98';
+  // button.style.zIndex = '1000';
+  // button.style.fontWeight = '600';
+  // button.style.fontSize = '24';
 
-  var button = document.createElement('BUTTON');
-  button.onclick = function() {
-    window.history.back();
-  };
-
-  var buttonText = document.createTextNode("❮ ALL NEWS");
-  button.appendChild(buttonText);
-
-  button.style.height = '50px';
-  button.style.width = '100%';
-  button.style.position = 'fixed';
-  button.style.opacity = '0.98';
-  button.style.zIndex = '1000';
-
-  document.body.insertBefore(button, newsBlocks);
+  // document.body.insertBefore(button, newsBlocks);
 
 `;
 
@@ -44,10 +45,14 @@ class News extends Component {
 
   render() {
 
+    console.log(this.refs.webview);
+
     return (
       <View style={NewsStyles.container}>
         <ImageBar title="News" />
         <Weblay
+          hasBackNav
+          backNavText="BACK"
           type="news"
           title="LOADING CELEBRATION NEWS"
           uri="http://celebrationorl.org/category/updates/"

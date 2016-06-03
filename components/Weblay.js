@@ -2,7 +2,8 @@ import React, {
   Component,
   View,
   Text,
-  WebView
+  WebView,
+  TouchableOpacity,
 } from 'react-native';
 
 import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
@@ -10,6 +11,7 @@ import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import store from '../redux/appStore';
 
+const BackIcon = (<Icon name="chevron-left" size={45} color={'#171717'} />);
 const SpinnerIcon = (<Icon name="spinner-3" size={50} color="#171717" />)
 
 class Weblay extends Component {
@@ -28,7 +30,9 @@ class Weblay extends Component {
     title: React.PropTypes.string,
     uri: React.PropTypes.string,
     injectedJSCode: React.PropTypes.string,
-    type: React.PropTypes.string
+    type: React.PropTypes.string,
+    backNavText: React.PropTypes.string,
+    hasBackNav: React.PropTypes.bool
   }
 
   getLoadingIndicator(title) {
@@ -62,19 +66,47 @@ class Weblay extends Component {
 
   }
 
+  getBackNav() {
+
+    let { hasBackNav, backNavText } = this.props;
+
+    if (hasBackNav) {
+      return (
+        <TouchableOpacity
+          onPress={() => this.goBack()}
+          style={WebviewOverlayStyles.backNavIcon}>
+          {BackIcon}
+          <Text style={WebviewOverlayStyles.backNavText}>
+            {backNavText}
+          </Text>
+        </TouchableOpacity>
+      )
+    } else {
+      return null;
+    }
+
+  }
+
+  goBack() {
+    this.refs.webview.goBack();
+  }
+
   render() {
 
     let { title, uri, type } = this.props;
     let { loadedWebViews } = this.state;
 
     let loadingIndicator = this.getLoadingIndicator(title);
+    let backNav = this.getBackNav();
 
     if (loadedWebViews[type] === true) loadingIndicator = null;
 
     return (
       <View style={WebviewOverlayStyles.container}>
         {loadingIndicator}
+        {backNav}
         <WebView
+          ref="webview"
           style={WebviewOverlayStyles.webView}
           source={{
             uri: uri,
