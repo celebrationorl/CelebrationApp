@@ -15,7 +15,6 @@ const ImageBarStyles = React.StyleSheet.create({
   },
 
   bgImage: {
-    resizeMode: 'cover',
     flex: 1,
     alignSelf: 'center',
     justifyContent: 'flex-start',

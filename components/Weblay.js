@@ -93,8 +93,10 @@ class Weblay extends Component {
       return (
         <TouchableOpacity
           onPress={() => this.goBack()}
-          style={WebviewOverlayStyles.backNavIcon}>
-          {BackIcon}
+          style={WebviewOverlayStyles.backNavWrapper}>
+          <Text style={WebviewOverlayStyles.backNavIcon}>
+            {BackIcon}
+          </Text>
           <Text style={WebviewOverlayStyles.backNavText}>
             {backNavText}
           </Text>

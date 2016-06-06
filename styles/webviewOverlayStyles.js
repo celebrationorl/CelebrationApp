@@ -10,7 +10,7 @@ const WebViewOverlayStyles = React.StyleSheet.create({
     backgroundColor: 'white'
   },
 
-  backNavIcon: {
+  backNavWrapper: {
     marginTop: 5,
     paddingRight: 20,
     paddingLeft: 15,
@@ -20,12 +20,19 @@ const WebViewOverlayStyles = React.StyleSheet.create({
     width: width
   },
 
-  backNavText: {
-    fontFamily: 'Avenir',
-    textAlign: 'center',
+  backNavIcon: {
+    alignSelf: 'flex-start',
     fontSize: 18,
-    marginTop: -33,
-    marginLeft: 35,
+    fontWeight: '600',
+    backgroundColor: 'transparent',
+    color: black
+  },
+
+  backNavText: {
+    bottom: 8,
+    left: 50,
+    fontFamily: 'Avenir',
+    fontSize: 18,
     fontWeight: '600',
     position: 'absolute',
     backgroundColor: 'transparent',
@@ -44,18 +51,14 @@ const WebViewOverlayStyles = React.StyleSheet.create({
 
   webviewOverlay: {
     paddingTop: 200,
-    paddingRight: 200,
     paddingBottom: 350,
-    paddingLeft: 200,
     alignSelf: 'center',
     justifyContent: 'center',
   },
 
   webviewOverlayPresentation: {
     paddingTop: 30,
-    paddingRight: 200,
     paddingBottom: 350,
-    paddingLeft: 200,
     alignSelf: 'center',
     justifyContent: 'center',
   },

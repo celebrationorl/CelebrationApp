@@ -170,7 +170,7 @@ class More extends Component {
                     this.setMoreImageBar('Contact')
                   }
                 }
-                style={MoreStyles.instagramIcon}
+                style={MoreStyles.mailIcon}
                 >
                 {MailIcon}
               </TouchableOpacity>

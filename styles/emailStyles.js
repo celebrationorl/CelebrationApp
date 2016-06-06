@@ -14,34 +14,25 @@ const EmailStyles = React.StyleSheet.create({
   },
 
   innerContainer: {
+    alignSelf: 'flex-start',
     marginTop: -25
   },
 
   contactTitle: {
     fontFamily: 'Avenir',
-    paddingTop: 30,
+    marginTop: 30,
     paddingBottom: 3,
-    textAlign: 'center',
     fontSize: 18,
     fontWeight: '600',
-    alignSelf: 'flex-start',
     color: titleColor
   },
 
   contactParagraph: {
     fontFamily: 'Avenir',
-    textAlign: 'center',
     fontSize: 18,
     fontWeight: '200',
-    alignSelf: 'flex-start',
     color: paragraphColor,
     paddingBottom: 5
-  },
-
-  row: {
-    flexDirection: 'row',
-    alignSelf: 'flex-start',
-    justifyContent: 'space-around'
   },
 
   contactChunck: {
