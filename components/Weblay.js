@@ -39,7 +39,7 @@ class Weblay extends Component {
   getLoadingIndicator(title) {
 
     return this.props.detailedPresentation ? (
-      <View>
+      <Animatable.View ref="wvloading">
         {this.props.detailedPresentation}
         <View style={WebviewOverlayStyles.webviewOverlayPresentation}>
           <Text style={WebviewOverlayStyles.loadingTitle}>
@@ -54,7 +54,7 @@ class Weblay extends Component {
             {SpinnerIcon}
           </Animatable.View>
         </View>
-      </View>
+      </Animatable.View>
     ) : (
       <View style={WebviewOverlayStyles.webviewOverlay}>
         <Text style={WebviewOverlayStyles.loadingTitle}>
@@ -120,10 +120,15 @@ class Weblay extends Component {
     let loadingIndicator = this.getLoadingIndicator(title);
     let backNav = this.getBackNav();
 
-    if (loadedWebViews[type] === true) loadingIndicator = null;
+    if (loadedWebViews[type] === true) {
+      this.refs.wvloading.fadeOut(500);
+      this.setTimeout(() => { loadingIndicator = null; }, 510);
+    }
 
     return (
-      <View style={WebviewOverlayStyles.container}>
+      <Animatable.View
+        ref="wvwrapper"
+        style={WebviewOverlayStyles.container}>
         {loadingIndicator}
         {backNav}
         <WebView
@@ -132,12 +137,15 @@ class Weblay extends Component {
           source={{
             uri: uri,
           }}
-          onLoad={() => this.onWebviewLoad(type)}
+          onLoad={() => {
+            this.refs.wvwrapper.fadeIn(500);
+            this.onWebviewLoad(type);
+          }}
           injectedJavaScript={this.props.injectedJSCode}
           javaScriptEnabledAndroid
           scalesPageToFit
         />
-      </View>
+      </Animatable.View>
     );
   }
 
