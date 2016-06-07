@@ -122,9 +122,9 @@ class Weblay extends Component {
     let loadingIndicator = this.getLoadingIndicator(title);
     let backNav = this.getBackNav();
 
-    // TODO if webview is loaded is true dont do animation fadeIn
-    // add this fix for all webviews
-    if (loadedWebViews[type] === true) loadingIndicator = null;
+    if (loadedWebViews[type] === true) {
+      loadingIndicator = null;
+    }
 
     return (
       <Animatable.View
@@ -139,7 +139,9 @@ class Weblay extends Component {
             uri: uri,
           }}
           onLoad={() => {
-            this.refs.wvwrapper.fadeIn(500);
+            if (loadedWebViews[type] === false) {
+                this.refs.wvwrapper.fadeIn(500);
+            }
             this.onWebviewLoad(type);
           }}
           injectedJavaScript={this.props.injectedJSCode}
