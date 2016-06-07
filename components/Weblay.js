@@ -10,6 +10,8 @@ import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import store from '../redux/appStore';
+// var reactMixin = require('react-mixin');
+// var TimerMixin = require('react-timer-mixin');
 
 const BackIcon = (<Icon name="chevron-left" size={45} color={'#171717'} />);
 const SpinnerIcon = (<Icon name="spinner-3" size={50} color="#171717" />)
@@ -39,7 +41,7 @@ class Weblay extends Component {
   getLoadingIndicator(title) {
 
     return this.props.detailedPresentation ? (
-      <View>
+      <Animatable.View ref="wvloading">
         {this.props.detailedPresentation}
         <View style={WebviewOverlayStyles.webviewOverlayPresentation}>
           <Text style={WebviewOverlayStyles.loadingTitle}>
@@ -54,7 +56,7 @@ class Weblay extends Component {
             {SpinnerIcon}
           </Animatable.View>
         </View>
-      </View>
+      </Animatable.View>
     ) : (
       <View style={WebviewOverlayStyles.webviewOverlay}>
         <Text style={WebviewOverlayStyles.loadingTitle}>
@@ -120,10 +122,14 @@ class Weblay extends Component {
     let loadingIndicator = this.getLoadingIndicator(title);
     let backNav = this.getBackNav();
 
-    if (loadedWebViews[type] === true) loadingIndicator = null;
+    if (loadedWebViews[type] === true) {
+      loadingIndicator = null;
+    }
 
     return (
-      <View style={WebviewOverlayStyles.container}>
+      <Animatable.View
+        ref="wvwrapper"
+        style={WebviewOverlayStyles.container}>
         {loadingIndicator}
         {backNav}
         <WebView
@@ -132,15 +138,22 @@ class Weblay extends Component {
           source={{
             uri: uri,
           }}
-          onLoad={() => this.onWebviewLoad(type)}
+          onLoad={() => {
+            if (loadedWebViews[type] === false) {
+                this.refs.wvwrapper.fadeIn(500);
+            }
+            this.onWebviewLoad(type);
+          }}
           injectedJavaScript={this.props.injectedJSCode}
           javaScriptEnabledAndroid
           scalesPageToFit
         />
-      </View>
+      </Animatable.View>
     );
   }
 
 }
+
+// reactMixin(Weblay.prototype, TimerMixin);
 
 export default Weblay;

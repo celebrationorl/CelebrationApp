@@ -9,6 +9,7 @@ import React, {
 
 import ChurchLifeStyles from '../styles/churchLifeStyles';
 import ChurchLifeArea from '../components/ChurchLifeArea';
+import * as Animatable from 'react-native-animatable';
 
 import store from '../redux/appStore';
 
@@ -22,6 +23,11 @@ class ChurchLife extends Component {
     store.subscribe(() => {
       this.setState(store.getState());
     });
+  }
+
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
   }
 
   setChurchLifeArea(areaType) {
@@ -74,137 +80,143 @@ class ChurchLife extends Component {
     }
 
     return (
-      <View style={ChurchLifeStyles.container}>
-        <View style={ChurchLifeStyles.areasWrapper}>
-          <View style={ChurchLifeStyles.row}>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('preschool')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, preschoolBtnStyle]}
+      <Animatable.View
+        ref="outerView"
+        style={ChurchLifeStyles.container}>
+        <Animatable.View
+          ref="innerView"
+          style={ChurchLifeStyles.container}>
+          <View style={ChurchLifeStyles.areasWrapper}>
+            <View style={ChurchLifeStyles.row}>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('preschool')}
                   >
-                  PRESCHOOL NURSERY
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, preschoolBtnStyle]}
+                    >
+                    PRESCHOOL NURSERY
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('kids')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, kidsBtnStyle]}
+                    >
+                    KIDS
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('superSquad')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, superSquadBtnStyle]}
+                    >
+                    SUPER SQUAD
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('kids')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, kidsBtnStyle]}
+
+            <View style={ChurchLifeStyles.row}>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('fuse')}
                   >
-                  KIDS
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, fuseBtnStyle]}
+                    >
+                    FUSE
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('men')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, menBtnStyle]}
+                    >
+                    MEN
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('college')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, collegeBtnStyle]}
+                    >
+                    COLLEGE
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('communityGroups')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, communityGroupsBtnStyle]}
+                    >
+                    COMMUNITY GROUPS
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('superSquad')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, superSquadBtnStyle]}
+
+            <View style={ChurchLifeStyles.row}>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('fusejv')}
                   >
-                  SUPER SQUAD
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, fusejvBtnStyle]}
+                    >
+                    FUSE JV
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('sisterhood')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, sisterhoodBtnStyle]}
+                    >
+                    SISTERHOOD
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={ChurchLifeStyles.area}>
+                <TouchableOpacity
+                  onPress={() => this.setChurchLifeArea('outreachMissions')}
+                  >
+                  <Text
+                    style={[ChurchLifeStyles.areaTitleText, outreachMissionsBtnStyle]}
+                    >
+                    OUTREACH/MISSIONS
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
 
-          <View style={ChurchLifeStyles.row}>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('fuse')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, fuseBtnStyle]}
-                  >
-                  FUSE
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('men')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, menBtnStyle]}
-                  >
-                  MEN
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('college')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, collegeBtnStyle]}
-                  >
-                  COLLEGE
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('communityGroups')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, communityGroupsBtnStyle]}
-                  >
-                  COMMUNITY GROUPS
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <View style={ChurchLifeStyles.row}>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('fusejv')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, fusejvBtnStyle]}
-                  >
-                  FUSE JV
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('sisterhood')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, sisterhoodBtnStyle]}
-                  >
-                  SISTERHOOD
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={ChurchLifeStyles.area}>
-              <TouchableOpacity
-                onPress={() => this.setChurchLifeArea('outreachMissions')}
-                >
-                <Text
-                  style={[ChurchLifeStyles.areaTitleText, outreachMissionsBtnStyle]}
-                  >
-                  OUTREACH/MISSIONS
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-
-        <ScrollView
-          ref={(scrollView) => { _scrollView = scrollView; }}
-          automaticallyAdjustContentInsets={false}
-          scrollEventThrottle={200}
-          style={ChurchLifeStyles.scrollView}
-          >
-          <ChurchLifeArea churchLifeAreaType={this.getChurchLifeAreaType()} />
-        </ScrollView>
-      </View>
+          <ScrollView
+            ref={(scrollView) => { _scrollView = scrollView; }}
+            automaticallyAdjustContentInsets={false}
+            scrollEventThrottle={200}
+            style={ChurchLifeStyles.scrollView}
+            >
+            <ChurchLifeArea churchLifeAreaType={this.getChurchLifeAreaType()} />
+          </ScrollView>
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }
