@@ -122,6 +122,8 @@ class Weblay extends Component {
     let loadingIndicator = this.getLoadingIndicator(title);
     let backNav = this.getBackNav();
 
+    // TODO if webview is loaded is true dont do animation fadeIn
+    // add this fix for all webviews
     if (loadedWebViews[type] === true) loadingIndicator = null;
 
     return (
