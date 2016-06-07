@@ -5,6 +5,7 @@ import React, {
 } from 'react-native';
 
 import EmailStyles from '../styles/emailStyles';
+import * as Animatable from 'react-native-animatable';
 
 class Email extends Component {
 
@@ -12,11 +13,16 @@ class Email extends Component {
     super(props, context);
   }
 
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
+  }
+
   render() {
 
     return (
-      <View style={EmailStyles.container}>
-        <View style={EmailStyles.innerContainer}>
+      <Animatable.View ref="outerView" style={EmailStyles.container}>
+        <Animatable.View ref="innerView" style={EmailStyles.innerContainer}>
           <View style={EmailStyles.contactChunck}>
             <Text style={EmailStyles.contactTitle}>
               General Email
@@ -61,8 +67,8 @@ class Email extends Component {
               groups@celebrationorl.org
             </Text>
           </View>
-        </View>
-      </View>
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }

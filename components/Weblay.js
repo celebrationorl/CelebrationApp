@@ -10,6 +10,8 @@ import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import store from '../redux/appStore';
+// var reactMixin = require('react-mixin');
+// var TimerMixin = require('react-timer-mixin');
 
 const BackIcon = (<Icon name="chevron-left" size={45} color={'#171717'} />);
 const SpinnerIcon = (<Icon name="spinner-3" size={50} color="#171717" />)
@@ -120,10 +122,7 @@ class Weblay extends Component {
     let loadingIndicator = this.getLoadingIndicator(title);
     let backNav = this.getBackNav();
 
-    if (loadedWebViews[type] === true) {
-      this.refs.wvloading.fadeOut(500);
-      this.setTimeout(() => { loadingIndicator = null; }, 510);
-    }
+    if (loadedWebViews[type] === true) loadingIndicator = null;
 
     return (
       <Animatable.View
@@ -150,5 +149,7 @@ class Weblay extends Component {
   }
 
 }
+
+// reactMixin(Weblay.prototype, TimerMixin);
 
 export default Weblay;

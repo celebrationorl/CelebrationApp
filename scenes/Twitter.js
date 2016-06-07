@@ -6,6 +6,7 @@ import React, {
 
 import TwitterStyles from '../styles/twitterStyles';
 import Weblay from '../components/Weblay';
+import * as Animatable from 'react-native-animatable';
 
 class Twitter extends Component {
 
@@ -13,16 +14,25 @@ class Twitter extends Component {
     super(props, context);
   }
 
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
+  }
+
   render() {
 
     return (
-      <View>
-        <Weblay
-          type="twitter"
-          title="LOADING CELEBRATION TWITTER"
-          uri="https://twitter.com/CelebrationORL"
-          />
-      </View>
+      <Animatable.View
+        ref="outerView"
+        style={TwitterStyles.container}>
+        <Animatable.View ref="innerView">
+          <Weblay
+            type="twitter"
+            title="LOADING CELEBRATION TWITTER"
+            uri="https://twitter.com/CelebrationORL"
+            />
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }
