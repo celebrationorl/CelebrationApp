@@ -121,7 +121,12 @@ class More extends Component {
 
         {this.getModal()}
 
-        <ImageBar title={this.getImageBarTitle()} />
+        // TODO: Make More imagebar be conrolled by state and changed based on option
+
+        <ImageBar
+          title={this.getImageBarTitle()}
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_more.png')}
+          />
 
         <View style={MoreStyles.blocks}>
           <View style={MoreStyles.row}>

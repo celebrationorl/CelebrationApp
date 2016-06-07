@@ -14,14 +14,13 @@ class ImageBar extends Component {
   }
 
   propTypes: {
-    title: React.PropTypes.string
+    title: React.PropTypes.string,
+    imagePath: React.PropTypes.string
   }
 
   render() {
 
-    // TODO: Allow background image to be pass-in-able
-
-    let { title } = this.props;
+    let { title, imagePath } = this.props;
 
     if (!title) title = 'Title';
 
@@ -29,7 +28,7 @@ class ImageBar extends Component {
       <View style={ImageBarStyles.container}>
         <Image
           style={ImageBarStyles.bgImage}
-          source={require('../assets/img/celebration_imgbar_bg_1.png')}
+          source={imagePath}
         >
           <Text style={ImageBarStyles.title}>
             {title}

@@ -62,7 +62,10 @@ class News extends Component {
 
     return (
       <View style={NewsStyles.container}>
-        <ImageBar title="News" />
+        <ImageBar
+          title="News"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_news.png')}
+          />
         <Weblay
           hasBackNav
           backNavText="BACK"

@@ -26,7 +26,10 @@ class Visit extends Component {
 
     return (
       <View style={VisitStyles.container}>
-        <ImageBar title="Visit" />
+        <ImageBar
+          title="Visit"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_visit.png')}
+          />
         <Text style={VisitStyles.body}>
           {payload.body}
         </Text>
