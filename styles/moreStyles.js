@@ -1,5 +1,5 @@
 import React, { Dimensions } from 'react-native';
-import { moreblockBorderColor } from './moreStyles';
+import { black } from './moreStyles';
 var {height, width} = Dimensions.get('window');
 
 const MoreStyles = React.StyleSheet.create({
@@ -35,155 +35,166 @@ const MoreStyles = React.StyleSheet.create({
   },
 
   websiteBlockText: {
+    textAlign: 'center',
     fontFamily: 'Avenir',
     fontSize: 16,
     fontWeight: '800',
-    color: moreblockBorderColor,
-    marginLeft: -7,
-    paddingRight: 7
+    color: 'black'
   },
 
   aboutBlockText: {
+    textAlign: 'center',
     fontFamily: 'Avenir',
     fontSize: 16,
     fontWeight: '800',
-    color: moreblockBorderColor
+    color: 'black'
   },
 
   nextStepsBlockText: {
+    textAlign: 'center',
     fontFamily: 'Avenir',
     fontSize: 16,
     fontWeight: '800',
-    color: moreblockBorderColor,
-    marginLeft: -7,
-    paddingRight: 7
+    color: 'black'
   },
 
   churchLifeBlockText: {
+    textAlign: 'center',
     fontFamily: 'Avenir',
     fontSize: 16,
     fontWeight: '800',
-    color: moreblockBorderColor
+    color: 'black'
   },
 
   facebookBlock: {
-    borderTopWidth: 5,
-    borderRightWidth: 2,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
     borderBottomWidth: 3,
-    borderLeftWidth: 5,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 43,
+    paddingRight: 40,
     paddingBottom: 20,
     paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   instagramBlock: {
-    borderTopWidth: 5,
-    borderRightWidth: 5,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 43,
+    paddingRight: 40,
     paddingBottom: 20,
     paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   twitterBlock: {
-    borderTopWidth: 2,
-    borderRightWidth: 2,
-    borderBottomWidth: 5,
-    borderLeftWidth: 5,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 3,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 40,
+    paddingRight: 37,
     paddingBottom: 20,
     paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   mailBlock: {
-    borderTopWidth: 2,
-    borderRightWidth: 5,
-    borderBottomWidth: 5,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 3,
     borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 40,
+    paddingRight: 33,
     paddingBottom: 20,
     paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    borderColor: black,
     flexDirection: 'row'
   },
 
+  mailIcon: {
+    position: 'relative',
+    right: 3
+  },
+
   websiteBlock: {
-    borderTopWidth: 5,
+    margin: 10,
+    borderTopWidth: 3,
     borderRightWidth: 3,
-    borderBottomWidth: 5,
-    borderLeftWidth: 5,
+    borderBottomWidth: 3,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 25,
+    paddingRight: 30,
     paddingBottom: 20,
-    paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    paddingLeft: 30,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   aboutBlock: {
-    borderTopWidth: 5,
-    borderRightWidth: 5,
-    borderBottomWidth: 5,
-    borderLeftWidth: 2,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 3,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 40,
+    paddingRight: 39,
     paddingBottom: 20,
     paddingLeft: 40,
-    borderColor: moreblockBorderColor,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   nextStepsBlock: {
-    borderTopWidth: 1,
+    margin: 10,
+    borderTopWidth: 3,
     borderRightWidth: 3,
-    borderBottomWidth: 5,
-    borderLeftWidth: 5,
+    borderBottomWidth: 3,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 13.5,
-    paddingBottom: 20,
-    paddingLeft: 29,
-    borderColor: moreblockBorderColor,
+    paddingRight: 19,
+    paddingBottom: 18,
+    paddingLeft: 20,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   churchLifeBlock: {
-    borderTopWidth: 1,
-    borderRightWidth: 5,
-    borderBottomWidth: 5,
-    borderLeftWidth: 2,
+    margin: 10,
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 3,
+    borderLeftWidth: 3,
     paddingTop: 20,
-    paddingRight: 22,
-    paddingBottom: 20,
-    paddingLeft: 20,
-    borderColor: moreblockBorderColor,
+    paddingRight: 19,
+    paddingBottom: 18,
+    paddingLeft: 22,
+    borderColor: black,
     flexDirection: 'row'
   },
 
   blocks: {
-    padding: 40,
+    paddingTop: 20,
     alignItems: 'stretch'
   },
 
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
   },
 
   separatedRow: {
-    marginTop: 40,
+    marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'space-around'
   }
 
 });

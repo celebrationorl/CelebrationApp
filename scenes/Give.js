@@ -1,8 +1,11 @@
 import React, {
   Component,
   View,
-  WebView
 } from 'react-native';
+
+import GiveStyles from '../styles/giveStyles';
+import ImageBar from '../components/ImageBar';
+import Weblay from '../components/Weblay';
 
 var injectedJSCode = `
     var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
@@ -19,9 +22,6 @@ var injectedJSCode = `
 
 `;
 
-import GiveStyles from '../styles/giveStyles';
-import ImageBar from '../components/ImageBar';
-
 class Give extends Component {
 
   constructor(props, context) {
@@ -32,16 +32,18 @@ class Give extends Component {
 
     return (
       <View style={GiveStyles.container}>
-        <ImageBar title="Give" />
-        <WebView
-          style={GiveStyles.webView}
-          source={{
-            uri: 'http://celebrationorl.org/giving-information/',
-          }}
-          injectedJavaScript={injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
-        />
+        <ImageBar
+          title="Give"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_give.png')}
+          />
+        <Weblay
+          type="give"
+          title="LOADING CELEBRATION GIVING"
+          uri="http://celebrationorl.org/giving-information/"
+          injectedJSCode={injectedJSCode}
+          hasBackNav
+          backNavText="BACK"
+          />
       </View>
     )
   }

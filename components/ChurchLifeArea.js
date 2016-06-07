@@ -6,6 +6,9 @@ import React, {
   WebView
 } from 'react-native';
 
+import ChurchLifeStyles from '../styles/churchLifeStyles';
+import Weblay from '../components/Weblay';
+
 var injectedMissionsWebViewJSCode = `
 
   var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
@@ -23,8 +26,6 @@ var injectedMissionsWebViewJSCode = `
   document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
 
 `;
-
-import ChurchLifeStyles from '../styles/churchLifeStyles';
 
 var superSquadImage = require('../assets/img/church_life_areas/super_squad_graphic.png');
 var kidsImage = require('../assets/img/church_life_areas/kids_graphic.png');
@@ -241,28 +242,24 @@ class ChurchLifeArea extends Component {
     } else if (churchLifeAreaType === 'outreachMissions') {
       areaContent = (
         <View>
-          <WebView
-            style={ChurchLifeStyles.webView}
-            source={{
-              uri: "http://celebrationorl.org/outreach/",
-            }}
-            injectedJavaScript={injectedMissionsWebViewJSCode}
-            javaScriptEnabledAndroid={true}
-            scalesPageToFit={true}
-          />
+          <Weblay
+            type="missions"
+            title="LOADING CELEBRATION MISSIONS"
+            uri="http://celebrationorl.org/outreach/"
+            injectedJSCode={injectedMissionsWebViewJSCode}
+            />
         </View>
       );
     } else if (churchLifeAreaType === 'college') {
       areaContent = (
         <View>
-          <WebView
-            style={ChurchLifeStyles.webView}
-            source={{
-              uri: "http://celebrationorl.org/college/",
-            }}
-            javaScriptEnabledAndroid={true}
-            scalesPageToFit={true}
-          />
+          <Weblay
+            hasBackNav
+            backNavText="BACK"
+            type="college"
+            title="LOADING CELEBRATION COLLEGE"
+            uri="http://celebrationorl.org/college/"
+            />
         </View>
       );
     }

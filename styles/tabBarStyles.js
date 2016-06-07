@@ -3,13 +3,15 @@ import React from 'react-native';
 const TabBarStyles = React.StyleSheet.create({
 
   tabNavigator: {
-    height: 50
+    height: 47,
+    backgroundColor: 'white',
   },
 
   title: {
     fontFamily: 'Avenir',
     color: '#171717',
-    top: -5
+    top: -5,
+    marginBottom: -2
   },
 
   titleSelected: {

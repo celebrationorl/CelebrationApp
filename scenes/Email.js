@@ -5,6 +5,7 @@ import React, {
 } from 'react-native';
 
 import EmailStyles from '../styles/emailStyles';
+import * as Animatable from 'react-native-animatable';
 
 class Email extends Component {
 
@@ -12,77 +13,62 @@ class Email extends Component {
     super(props, context);
   }
 
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
+  }
+
   render() {
 
     return (
-      <View style={EmailStyles.container}>
-        <View style={EmailStyles.innerContainer}>
+      <Animatable.View ref="outerView" style={EmailStyles.container}>
+        <Animatable.View ref="innerView" style={EmailStyles.innerContainer}>
           <View style={EmailStyles.contactChunck}>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactTitle}>
-                General Email
-              </Text>
-            </View>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactParagraph}>
-                celebration@celebrationorl.org
-              </Text>
-            </View>
+            <Text style={EmailStyles.contactTitle}>
+              General Email
+            </Text>
+            <Text style={EmailStyles.contactParagraph}>
+              celebration@celebrationorl.org
+            </Text>
           </View>
 
           <View style={EmailStyles.contactChunck}>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactTitle}>
-                Giving Email
-              </Text>
-            </View>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactParagraph}>
-                give@celebrationorl.org
-              </Text>
-            </View>
+            <Text style={EmailStyles.contactTitle}>
+              Giving Email
+            </Text>
+            <Text style={EmailStyles.contactParagraph}>
+              give@celebrationorl.org
+            </Text>
           </View>
 
           <View style={EmailStyles.contactChunck}>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactTitle}>
-                Student Pastor Email
-              </Text>
-            </View>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactParagraph}>
-                jdelacruz@celebrationorl.org
-              </Text>
-            </View>
+            <Text style={EmailStyles.contactTitle}>
+              Student Pastor Email
+            </Text>
+            <Text style={EmailStyles.contactParagraph}>
+              jdelacruz@celebrationorl.org
+            </Text>
           </View>
 
           <View style={EmailStyles.contactChunck}>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactTitle}>
-                Outreach/Missions Email
-              </Text>
-            </View>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactParagraph}>
-                outreach@celebrationorl.org
-              </Text>
-            </View>
+            <Text style={EmailStyles.contactTitle}>
+              Outreach/Missions Email
+            </Text>
+            <Text style={EmailStyles.contactParagraph}>
+              outreach@celebrationorl.org
+            </Text>
           </View>
 
           <View style={EmailStyles.contactChunck}>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactTitle}>
-                Community Groups Email
-              </Text>
-            </View>
-            <View style={EmailStyles.row}>
-              <Text style={EmailStyles.contactParagraph}>
-                groups@celebrationorl.org
-              </Text>
-            </View>
+            <Text style={EmailStyles.contactTitle}>
+              Community Groups Email
+            </Text>
+            <Text style={EmailStyles.contactParagraph}>
+              groups@celebrationorl.org
+            </Text>
           </View>
-        </View>
-      </View>
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }

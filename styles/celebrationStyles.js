@@ -3,10 +3,12 @@ var {height, width} = Dimensions.get('window');
 
 const CelebrationStyles = React.StyleSheet.create({
 
-  webView: {
-    width: width,
-    height: height - 135
-  }
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    width: width
+  },
 
 });
 

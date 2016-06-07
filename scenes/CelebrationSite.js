@@ -6,6 +6,8 @@ import React, {
 } from 'react-native';
 
 import CelebrationStyles from '../styles/celebrationStyles';
+import Weblay from '../components/Weblay';
+import * as Animatable from 'react-native-animatable';
 
 class CelebrationSite extends Component {
 
@@ -13,18 +15,25 @@ class CelebrationSite extends Component {
     super(props, context);
   }
 
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
+  }
+
   render() {
 
     return (
-      <View>
-        <WebView
-          style={CelebrationStyles.webView}
-          source={{
-            uri: 'http://celebrationorl.org/',
-          }}
-          scalesPageToFit={true}
-        />
-      </View>
+      <Animatable.View
+        ref="outerView"
+        style={CelebrationStyles.container}>
+        <Animatable.View ref="innerView">
+          <Weblay
+            type="website"
+            title="LOADING CELEBRATION WEBSITE"
+            uri="http://celebrationorl.org/"
+            />
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }

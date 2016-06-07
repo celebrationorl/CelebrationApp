@@ -6,7 +6,10 @@
 - run `npm start` in root after npm install is finished
 - open up separate terminal window and run `react-native run-<platform-here>` (platform here should be 'ios' or 'android')
 
-You will need iOS Simulator and XCode to run app.
+You will need iOS Simulator and XCode to run app and for Android you will need a device or emulator (https://www.genymotion.com/)
+
+### Technical Preferences
+- avoid making seperations between ios and android in code
 
 ---
 
@@ -62,6 +65,33 @@ render() {
       <View>
         <Text>Icons!</Text>
         {VisitIcon}
+      </View>  
+    );
+  }
+```
+
+#### Use of <a href="https://github.com/oblador/react-native-animatable">react-native-animatable</a>
+*this is an npm package and is required for use in this project, if you are using `<Weblay />` component (webview with loading indicator).*
+
+**Use in app:**
+- used for all and any animations in app
+- used for webview loading indicator in `<Weblay />` component
+
+```
+import * as Animatable from 'react-native-animatable';
+
+render() {
+    return (
+      <View>
+        {/* Animatable.<type> (type examples: View, Image, Text) */}
+        <Animatable.View
+          animation="rotate"
+          easing="linear"
+          iterationCount="infinite"
+          style={WebviewOverlayStyles.animator}
+          >
+          {<animated-element>}
+        </Animatable.View>
       </View>  
     );
   }

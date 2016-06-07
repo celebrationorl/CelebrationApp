@@ -1,11 +1,9 @@
-import React, { Dimensions } from 'react-native';
-var {height, width} = Dimensions.get('window');
+import React from 'react-native';
 
 const InstagramStyles = React.StyleSheet.create({
-  
-  webView: {
-    width: width,
-    height: height - 135
+
+  container: {
+    backgroundColor: 'white'
   }
 
 });

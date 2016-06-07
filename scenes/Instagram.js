@@ -1,11 +1,12 @@
 import React, {
   Component,
   View,
-  WebView,
   Text
 } from 'react-native';
 
 import InstagramStyles from '../styles/instagramStyles';
+import Weblay from '../components/Weblay';
+import * as Animatable from 'react-native-animatable';
 
 class Instagram extends Component {
 
@@ -13,18 +14,25 @@ class Instagram extends Component {
     super(props, context);
   }
 
+  componentDidMount() {
+    this.refs.outerView.bounceInUp(800);
+    this.refs.innerView.bounceInUp(900);
+  }
+
   render() {
 
     return (
-      <View>
-        <WebView
-          style={InstagramStyles.webView}
-          source={{
-            uri: 'https://www.instagram.com/celebrationorl/',
-          }}
-          scalesPageToFit={true}
-        />
-      </View>
+      <Animatable.View
+        ref="outerView"
+        style={InstagramStyles.container}>
+        <Animatable.View ref="innerView">
+          <Weblay
+            type="instagram"
+            title="LOADING CELEBRATION INSTAGRAM"
+            uri="https://www.instagram.com/celebrationorl/"
+            />
+        </Animatable.View>
+      </Animatable.View>
     );
   }
 }

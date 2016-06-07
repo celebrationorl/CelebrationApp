@@ -4,6 +4,10 @@ import React, {
   View
 } from 'react-native';
 
+import PodcastsStyles from '../styles/podcastsStyles';
+import ImageBar from '../components/ImageBar';
+import Weblay from '../components/Weblay';
+
 var injectedJSCode = `
 
   document.querySelector(".splash").style.display = 'none';
@@ -25,9 +29,6 @@ var injectedJSCode = `
 
 `;
 
-import PodcastsStyles from '../styles/podcastsStyles';
-import ImageBar from '../components/ImageBar';
-
 class Podcasts extends Component {
 
   constructor(props, context) {
@@ -38,16 +39,16 @@ class Podcasts extends Component {
 
     return (
       <View style={PodcastsStyles.container}>
-        <ImageBar title="Podcasts" />
-        <WebView
-          style={PodcastsStyles.webView}
-          source={{
-            uri: "http://celebrationorl.hipcast.com/podcast/HJjyJb",
-          }}
-          injectedJavaScript={injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
-        />
+        <ImageBar
+          title="Podcasts"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_podcasts.png')}
+          />
+        <Weblay
+          type="podcasts"
+          title="LOADING CELEBRATION PODCASTS"
+          uri="http://celebrationorl.hipcast.com/podcast/HJjyJb"
+          injectedJSCode={injectedJSCode}
+          />
       </View>
     );
   }

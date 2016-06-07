@@ -2,11 +2,13 @@ import React, {
   Component,
   View,
   Text,
-  WebView
+  Image
 } from 'react-native';
 
 import NewsStyles from '../styles/newsStyles';
+import WebviewOverlayStyles from '../styles/webviewOverlayStyles';
 import ImageBar from '../components/ImageBar';
+import Weblay from '../components/Weblay';
 
 var injectedJSCode = `
 
@@ -14,23 +16,25 @@ var injectedJSCode = `
   document.querySelector("#content-wrap").style.marginTop = '70px';
   document.querySelector("#footer-callout-wrap").style.display = 'none';
 
-  var newsBlocks = document.querySelector("div");
+  // var newsBlocks = document.querySelector("div");
+  //
+  // var button = document.createElement('BUTTON');
+  // button.onclick = function() {
+  //   window.history.back();
+  // };
+  //
+  // var buttonText = document.createTextNode("❮ ALL NEWS");
+  // button.appendChild(buttonText);
+  //
+  // button.style.height = '50px';
+  // button.style.width = '100%';
+  // button.style.position = 'fixed';
+  // button.style.opacity = '0.98';
+  // button.style.zIndex = '1000';
+  // button.style.fontWeight = '600';
+  // button.style.fontSize = '24';
 
-  var button = document.createElement('BUTTON');
-  button.onclick = function() {
-    window.history.back();
-  };
-
-  var buttonText = document.createTextNode("❮ ALL NEWS");
-  button.appendChild(buttonText);
-
-  button.style.height = '50px';
-  button.style.width = '100%';
-  button.style.position = 'fixed';
-  button.style.opacity = '0.98';
-  button.style.zIndex = '1000';
-
-  document.body.insertBefore(button, newsBlocks);
+  // document.body.insertBefore(button, newsBlocks);
 
 `;
 
@@ -40,20 +44,37 @@ class News extends Component {
     super(props, context);
   }
 
+  getDetailedPresentation() {
+    return (
+      <View style={NewsStyles.presentation}>
+        <Image
+          style={NewsStyles.logo}
+          source={require('../assets/img/celebration_logo.png')}
+        />
+        <Text style={NewsStyles.presentationText}>
+          WELCOME TO CELEBRATION CHURCH
+        </Text>
+      </View>
+    )
+  }
+
   render() {
 
     return (
       <View style={NewsStyles.container}>
-        <ImageBar title="News" />
-        <WebView
-          style={NewsStyles.webView}
-          source={{
-            uri: "http://celebrationorl.org/category/updates/",
-          }}
-          injectedJavaScript={injectedJSCode}
-          javaScriptEnabledAndroid={true}
-          scalesPageToFit={true}
-        />
+        <ImageBar
+          title="News"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_news.png')}
+          />
+        <Weblay
+          hasBackNav
+          backNavText="BACK"
+          type="news"
+          detailedPresentation={this.getDetailedPresentation()}
+          title="LOADING CELEBRATION NEWS"
+          uri="http://celebrationorl.org/category/updates/"
+          injectedJSCode={injectedJSCode}
+          />
       </View>
     );
   }
