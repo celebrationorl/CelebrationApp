@@ -39,7 +39,10 @@ class Podcasts extends Component {
 
     return (
       <View style={PodcastsStyles.container}>
-        <ImageBar title="Podcasts" />
+        <ImageBar
+          title="Podcasts"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_podcasts.png')}
+          />
         <Weblay
           type="podcasts"
           title="LOADING CELEBRATION PODCASTS"

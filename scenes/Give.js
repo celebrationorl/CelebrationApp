@@ -32,7 +32,10 @@ class Give extends Component {
 
     return (
       <View style={GiveStyles.container}>
-        <ImageBar title="Give" />
+        <ImageBar
+          title="Give"
+          imagePath={require('../assets/img/top_image_bar/top_image_bar_give.png')}
+          />
         <Weblay
           type="give"
           title="LOADING CELEBRATION GIVING"
