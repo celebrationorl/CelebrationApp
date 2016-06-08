@@ -7,7 +7,8 @@ const WebViewOverlayStyles = React.StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    height: height
   },
 
   backNavWrapper: {
