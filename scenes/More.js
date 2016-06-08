@@ -27,7 +27,7 @@ const iconSizes = 60,
 const FacebookIcon = (<Icon name="social-facebook" size={iconSizes} color={iconColor} />);
 const InstagramIcon = (<Ionicon name="logo-instagram" size={iconSizes} color={iconColor} />);
 const TwitterIcon = (<Icon name="social-twitter" size={iconSizes} color={iconColor} />);
-const MailIcon = (<Ionicon name="md-mail" size={iconSizes} color={iconColor} />);
+const MailIcon = (<Icon name="mail" size={iconSizes} color={iconColor} />);
 const CloseIcon = (<Ionicon name="ios-close-outline" size={45} color={'white'} />);
 
 class More extends Component {
@@ -128,118 +128,117 @@ class More extends Component {
 
         <View style={MoreStyles.blocks}>
           <View style={MoreStyles.row}>
-            <View style={MoreStyles.facebookBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('facebook')
-                    this.setMoreImageBar('Facebook')
-                  }
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('facebook')
+                  this.setMoreImageBar('Facebook')
                 }
-                style={MoreStyles.facebookIcon}
-                >
+              }
+              style={MoreStyles.facebookBlock}>
+              <View style={MoreStyles.blockInnerIcon}>
                 {FacebookIcon}
-              </TouchableOpacity>
-            </View>
-            <View style={MoreStyles.instagramBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('instagram')
-                    this.setMoreImageBar('Instagram')
-                  }
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('instagram')
+                  this.setMoreImageBar('Instagram')
                 }
-                style={MoreStyles.instagramIcon}>
+              }
+              style={MoreStyles.instagramBlock}>
+              <View style={MoreStyles.blockInnerIcon}>
                 {InstagramIcon}
-              </TouchableOpacity>
-            </View>
+              </View>
+            </TouchableOpacity>
           </View>
 
           <View style={MoreStyles.row}>
-            <View style={MoreStyles.twitterBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('twitter')
-                    this.setMoreImageBar('Twitter')
-                  }
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('twitter')
+                  this.setMoreImageBar('Twitter')
                 }
-                style={MoreStyles.facebookIcon}
-                >
+              }
+              style={MoreStyles.twitterBlock}
+              >
+              <View style={MoreStyles.blockInnerIcon}>
                 {TwitterIcon}
-              </TouchableOpacity>
-            </View>
-            <View style={MoreStyles.mailBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('email')
-                    this.setMoreImageBar('Contact')
-                  }
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('email')
+                  this.setMoreImageBar('Contact')
                 }
-                style={MoreStyles.mailIcon}
-                >
+              }
+              style={MoreStyles.mailBlock}
+              >
+              <View style={MoreStyles.blockInnerIcon}>
                 {MailIcon}
-              </TouchableOpacity>
-            </View>
+              </View>
+            </TouchableOpacity>
           </View>
 
           <View style={MoreStyles.separatedRow}>
-            <View style={MoreStyles.websiteBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('celebration')
-                    this.setMoreImageBar('Celebration Website')
-                  }
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('celebration')
+                  this.setMoreImageBar('Celebration Website')
                 }
-                style={MoreStyles.facebookIcon}
-                >
+              }
+              style={MoreStyles.websiteBlock}
+              >
+              <View style={MoreStyles.blockInnerWebsiteText}>
                 <Text style={MoreStyles.websiteBlockText}>
                   Website
                 </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={MoreStyles.aboutBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('about')
-                    this.setMoreImageBar('About')
-                  }
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('about')
+                  this.setMoreImageBar('About')
                 }
-                style={MoreStyles.instagramIcon}
-                >
+              }
+              style={MoreStyles.aboutBlock}
+              >
+              <View style={MoreStyles.blockInnerAboutText}>
                 <Text style={MoreStyles.aboutBlockText}>
                   About
                 </Text>
-              </TouchableOpacity>
-            </View>
+              </View>
+            </TouchableOpacity>
           </View>
 
           <View style={MoreStyles.row}>
-            <View style={MoreStyles.nextStepsBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('nextSteps')
-                    this.setMoreImageBar('Next Steps')
-                  }
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('nextSteps')
+                  this.setMoreImageBar('Next Steps')
                 }
-                style={MoreStyles.instagramIcon}
-                >
+              }
+              style={MoreStyles.nextStepsBlock}
+              >
+              <View style={MoreStyles.blockInnerNSText}>
                 <Text style={MoreStyles.nextStepsBlockText}>
                   Next Steps
                 </Text>
-              </TouchableOpacity>
-            </View>
-            <View style={MoreStyles.churchLifeBlock}>
-              <TouchableOpacity
-                onPress={() => {
-                    this.showModal('churchLife')
-                    this.setMoreImageBar('Church Life')
-                  }
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('churchLife')
+                  this.setMoreImageBar('Church Life')
                 }
-                style={MoreStyles.instagramIcon}
-                >
+              }
+              style={MoreStyles.churchLifeBlock}
+              >
+              <View style={MoreStyles.blockInnerCLText}>
                 <Text style={MoreStyles.churchLifeBlockText}>
                   Church Life
                 </Text>
-              </TouchableOpacity>
-            </View>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

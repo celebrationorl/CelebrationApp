@@ -114,6 +114,13 @@ class Weblay extends Component {
     this.refs.webview.goBack();
   }
 
+  handleNavigationStateChange(navState) {
+    // NOTE: Fix for Issue#87 Podacasts navigating to home page bug...
+    if (navState.url === 'http://www.hipcast.com/index.htm') {
+      goBack();
+    }
+  }
+
   render() {
 
     let { title, uri, type } = this.props;
@@ -144,6 +151,7 @@ class Weblay extends Component {
             }
             this.onWebviewLoad(type);
           }}
+          onNavigationStateChange={(navState) => this.handleNavigationStateChange(navState)}
           injectedJavaScript={this.props.injectedJSCode}
           javaScriptEnabledAndroid
           scalesPageToFit
