@@ -115,6 +115,7 @@ class Weblay extends Component {
   }
 
   handleNavigationStateChange(navState) {
+    // NOTE: Fix for Issue#87 Podacasts navigating to home page bug...
     if (navState.url === 'http://www.hipcast.com/index.htm') {
       goBack();
     }
