@@ -135,25 +135,25 @@ const MoreStyles = React.StyleSheet.create({
   blockInnerWebsiteText: {
     justifyContent: 'center',
     alignSelf: 'center',
-    paddingLeft: 30,
+    paddingLeft: 35,
   },
 
   blockInnerAboutText: {
     justifyContent: 'center',
     alignSelf: 'center',
-    paddingLeft: 38,
+    paddingLeft: 39,
   },
 
   blockInnerNSText: {
     justifyContent: 'center',
     alignSelf: 'center',
-    paddingLeft: 18,
+    paddingLeft: 25,
   },
 
   blockInnerCLText: {
     justifyContent: 'center',
     alignSelf: 'center',
-    paddingLeft: 20,
+    paddingLeft: 24,
   },
 
   aboutBlock: {
