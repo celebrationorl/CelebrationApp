@@ -25,7 +25,8 @@ var initialState = {
     website: false,
     instagram: false,
     facebook: false,
-    twitter: false
+    twitter: false,
+    visit: false
   }
 }
 

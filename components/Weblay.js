@@ -118,6 +118,8 @@ class Weblay extends Component {
     // NOTE: Fix for Issue#87 Podacasts navigating to home page bug...
     if (navState.url === 'http://www.hipcast.com/index.htm') {
       goBack();
+    } else {
+      return;
     }
   }
 
@@ -153,8 +155,9 @@ class Weblay extends Component {
           }}
           onNavigationStateChange={(navState) => this.handleNavigationStateChange(navState)}
           injectedJavaScript={this.props.injectedJSCode}
-          javaScriptEnabledAndroid
-          scalesPageToFit
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          scalesPageToFit={true}
         />
       </Animatable.View>
     );
