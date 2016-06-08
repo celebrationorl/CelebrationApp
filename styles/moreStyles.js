@@ -72,12 +72,16 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 40,
-    paddingBottom: 20,
-    paddingLeft: 40,
+    width: 128,
+    height: 113,
     borderColor: black,
     flexDirection: 'row'
+  },
+
+  blockInnerIcon: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingLeft: 40
   },
 
   instagramBlock: {
@@ -86,10 +90,8 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 40,
-    paddingBottom: 20,
-    paddingLeft: 40,
+    width: 128,
+    height: 113,
     borderColor: black,
     flexDirection: 'row'
   },
@@ -100,10 +102,8 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 37,
-    paddingBottom: 20,
-    paddingLeft: 40,
+    width: 128,
+    height: 113,
     borderColor: black,
     flexDirection: 'row'
   },
@@ -114,17 +114,10 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 33,
-    paddingBottom: 20,
-    paddingLeft: 40,
+    width: 128,
+    height: 113,
     borderColor: black,
     flexDirection: 'row'
-  },
-
-  mailIcon: {
-    position: 'relative',
-    right: 3
   },
 
   websiteBlock: {
@@ -133,12 +126,34 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 30,
-    paddingBottom: 20,
-    paddingLeft: 30,
+    width: 128,
+    height: 65,
     borderColor: black,
     flexDirection: 'row'
+  },
+
+  blockInnerWebsiteText: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingLeft: 35,
+  },
+
+  blockInnerAboutText: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingLeft: 39,
+  },
+
+  blockInnerNSText: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingLeft: 25,
+  },
+
+  blockInnerCLText: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingLeft: 24,
   },
 
   aboutBlock: {
@@ -147,10 +162,8 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 39,
-    paddingBottom: 20,
-    paddingLeft: 40,
+    width: 128,
+    height: 65,
     borderColor: black,
     flexDirection: 'row'
   },
@@ -161,10 +174,8 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 19,
-    paddingBottom: 18,
-    paddingLeft: 20,
+    width: 128,
+    height: 65,
     borderColor: black,
     flexDirection: 'row'
   },
@@ -175,10 +186,8 @@ const MoreStyles = React.StyleSheet.create({
     borderRightWidth: 3,
     borderBottomWidth: 3,
     borderLeftWidth: 3,
-    paddingTop: 20,
-    paddingRight: 19,
-    paddingBottom: 18,
-    paddingLeft: 22,
+    width: 128,
+    height: 65,
     borderColor: black,
     flexDirection: 'row'
   },
