@@ -243,6 +243,8 @@ class ChurchLifeArea extends Component {
       areaContent = (
         <View>
           <Weblay
+            hasBackNav
+            backNavText="BACK"
             type="missions"
             title="LOADING CELEBRATION MISSIONS"
             uri="http://celebrationorl.org/outreach/"
