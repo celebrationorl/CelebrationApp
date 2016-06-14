@@ -135,7 +135,10 @@ class App extends Component {
           renderIcon={() => GiveIconOutline}
           renderSelectedIcon={() => GiveIcon}
           onPress={() => this.setState({ selectedTab: 'give' })}>
-          <Give />
+          <Give
+            modalVisibility={this.getModalVisibility()}
+            modalType={this.getModalType()}
+            />
         </TabNavigator.Item>
 
         <TabNavigator.Item
