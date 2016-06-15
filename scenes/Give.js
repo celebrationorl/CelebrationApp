@@ -93,17 +93,17 @@ class Give extends Component {
     let title = '';
 
     if (option === 'giveLogin') {
-      title = 'LOGIN TO GIVE';
+      title = 'Login to Give';
     } else if (option === 'givePayPal') {
-      title = 'GIVE VIA PAYPAL';
+      title = 'Give via PayPal';
     } else if (option === 'giveText') {
-      title = 'GIVE VIA TEXT';
+      title = 'Give via Text';
     } else if (option === 'giveBank') {
-      title = 'USE YOUR BANK';
+      title = 'Use Your Bank';
     } else if (option === 'giveDonations') {
-      title = 'MATCHING DONATIONS'
+      title = 'Matching Donations'
     } else if (option === 'giveAsset') {
-      title = 'ASSET GIVING';
+      title = 'Asset Giving';
     }
 
     return (

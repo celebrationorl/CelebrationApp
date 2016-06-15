@@ -12,7 +12,7 @@ const GivingOptionsStyles = React.StyleSheet.create({
 
   scrollView: {
     backgroundColor: 'transparent',
-    height: 490
+    height: 540
   },
 
   webView: {
@@ -64,6 +64,7 @@ const GivingOptionsStyles = React.StyleSheet.create({
   weblay: {
     marginLeft: -20,
     width: width,
+    height: 380,
     borderTopWidth: 1,
     borderTopColor: 'lightgrey'
   },

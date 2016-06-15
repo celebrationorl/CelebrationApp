@@ -20,19 +20,19 @@ const GiveStyles = React.StyleSheet.create({
   },
 
   optionButton: {
-    paddingTop: 35,
-    paddingBottom: 35,
-    borderBottomWidth: 1,
-    borderBottomColor: 'lightgrey',
-    width: width,
+    padding: 35,
+    margin: 20,
+    borderWidth: 3,
+    borderColor: '#171717',
+    width: 300,
   },
 
   optionButtonText: {
-    fontFamily: 'Avenir',
     textAlign: 'center',
-    color: '#171717',
-    fontSize: 18,
-    fontWeight: '500'
+    fontFamily: 'Avenir',
+    fontSize: 20,
+    fontWeight: '800',
+    color: 'black'
   },
 
   modalContainer: {

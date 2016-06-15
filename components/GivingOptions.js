@@ -69,8 +69,10 @@ class GivingOptions extends Component {
             </Text>
           </View>
           <View style={GivingOptionsStyles.weblaySectionWrapper}>
-            <View style={GivingOptionsStyles.weblay}>
+            <View style={[GivingOptionsStyles.weblay, {height: 455}]}>
               <Weblay
+                hasBackNav
+                backNavText="BACK"
                 type="givePayPal"
                 title="LOADING CELEBRATION PAYPAL"
                 uri="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EEBAVHQU4SWEE"
