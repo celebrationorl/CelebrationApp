@@ -1,49 +1,151 @@
 import React, {
   Component,
   View,
+  ScrollView,
+  TouchableOpacity,
+  Modal,
+  Text
 } from 'react-native';
 
 import GiveStyles from '../styles/giveStyles';
 import ImageBar from '../components/ImageBar';
-import Weblay from '../components/Weblay';
+import GivingOptions from '../components/GivingOptions';
+import store from '../redux/appStore';
 
-var injectedJSCode = `
-    var heroImg = document.getElementsByClassName("vc_row wpb_row vc_row-fluid background-static");
-    var nav = document.getElementsByClassName("wpb_text_column wpb_content_element  fixed-menu");
+import Ionicon from 'react-native-vector-icons/Ionicons';
+const CloseIcon = (<Ionicon name="ios-close-outline" size={45} color={'white'} />);
 
-    var footer = document.getElementById("footer-callout-wrap");
-
-    footer.style.display = "none";
-    heroImg[0].style.display = "none";
-    nav[0].style.display = "none";
-
-    document.querySelector(".wpb_text_column.wpb_content_element.newtitle").style.display = 'none';
-    document.querySelector(".center-row-inner.clr").style.marginTop = '-50px';
-
-`;
+let givingOptions = [
+  'giveLogin',
+  'givePayPal',
+  'giveText',
+  'giveBank',
+  'giveDonations',
+  'giveAsset'
+];
 
 class Give extends Component {
 
   constructor(props, context) {
+
     super(props, context);
+
+    store.subscribe(() => {
+      this.setState(store.getState());
+    });
+
+  }
+
+  showModal(modalType) {
+    store.dispatch({
+      type: 'SHOW_MODAL',
+      modalType: modalType
+    })
+  }
+
+  getModal() {
+
+    let { modalType } = this.props;
+
+    let modalContent = null;
+
+    if (modalType === 'giveLogin') {
+      modalContent = (<GivingOptions type={modalType} />)
+    } else if (modalType === 'givePayPal') {
+      modalContent = (<GivingOptions type={modalType} />)
+    } else if (modalType === 'giveText') {
+      modalContent = (<GivingOptions type={modalType} />)
+    } else if (modalType === 'giveBank') {
+      modalContent = (<GivingOptions type={modalType} />)
+    } else if (modalType === 'giveDonations') {
+      modalContent = (<GivingOptions type={modalType} />)
+    } else if (modalType === 'giveAsset') {
+      modalContent = (<GivingOptions type={modalType} />)
+    }
+
+    return (
+      <Modal
+        animationType="slide"
+        animated={true}
+        transparent={true}
+        visible={this.props.modalVisibility}
+        onRequestClose={() => this.showModal('')}
+        >
+        <View style={GiveStyles.modalContainer}>
+          <View style={GiveStyles.modalInnerContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                  this.showModal('')
+                }
+              }
+              style={GiveStyles.modalCloseButton}>
+              {CloseIcon}
+            </TouchableOpacity>
+            {modalContent}
+          </View>
+        </View>
+      </Modal>
+    );
+  }
+
+  _getGivingOptions(option, i) {
+
+    let title = '';
+
+    if (option === 'giveLogin') {
+      title = 'Login to Give';
+    } else if (option === 'givePayPal') {
+      title = 'Give via PayPal';
+    } else if (option === 'giveText') {
+      title = 'Give via Text';
+    } else if (option === 'giveBank') {
+      title = 'Use Your Bank';
+    } else if (option === 'giveDonations') {
+      title = 'Matching Donations'
+    } else if (option === 'giveAsset') {
+      title = 'Asset Giving';
+    }
+
+    return (
+      <View key={i} style={GiveStyles.option}>
+        <TouchableOpacity
+          onPress={() => {
+              this.showModal(option);
+            }
+          }
+          style={GiveStyles.optionButton}
+          >
+          <Text style={GiveStyles.optionButtonText}>
+            {title}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    )
   }
 
   render() {
 
     return (
       <View style={GiveStyles.container}>
+
+        {this.getModal()}
+
         <ImageBar
           title="Give"
           imagePath={require('../assets/img/top_image_bar/top_image_bar_give.png')}
           />
-        <Weblay
-          type="give"
-          title="LOADING CELEBRATION GIVING"
-          uri="http://celebrationorl.org/giving-information/"
-          injectedJSCode={injectedJSCode}
-          hasBackNav
-          backNavText="BACK"
-          />
+
+        <ScrollView
+          ref={(scrollView) => { _scrollView = scrollView; }}
+          automaticallyAdjustContentInsets={false}
+          scrollEventThrottle={200}
+          style={GiveStyles.scrollView}
+          >
+          <View  style={GiveStyles.optionsWrapper}>
+            {givingOptions.map((option, i) => this._getGivingOptions(option, i))}
+          </View>
+        </ScrollView>
+
       </View>
     )
   }

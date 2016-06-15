@@ -19,14 +19,15 @@ var initialState = {
   loadedWebViews: {
     news: false,
     podcasts: false,
-    give: false,
     missions: false,
     college: false,
     website: false,
     instagram: false,
     facebook: false,
     twitter: false,
-    visit: false
+    visit: false,
+    giveLogin: false,
+    givePayPal: false
   }
 }
 
