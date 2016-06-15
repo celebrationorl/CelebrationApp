@@ -88,41 +88,37 @@ class Give extends Component {
     );
   }
 
-  _getGivingOptions(option) {
+  _getGivingOptions(option, i) {
 
     let title = '';
 
     if (option === 'giveLogin') {
-      title = 'Login to Give';
+      title = 'LOGIN TO GIVE';
     } else if (option === 'givePayPal') {
-      title = 'Give via PayPal';
+      title = 'GIVE VIA PAYPAL';
     } else if (option === 'giveText') {
-      title = 'Give via Text';
+      title = 'GIVE VIA TEXT';
     } else if (option === 'giveBank') {
-      title = 'Use Your Own Bank';
+      title = 'USE YOUR BANK';
     } else if (option === 'giveDonations') {
-      title = 'Matching Donations'
+      title = 'MATCHING DONATIONS'
     } else if (option === 'giveAsset') {
-      title = 'Asset Giving';
+      title = 'ASSET GIVING';
     }
 
     return (
-      <View style={GiveStyles.optionWrapper}>
-
-        <View style={GiveStyles.option}>
-          <TouchableOpacity
-            onPress={() => {
-                this.showModal(option);
-              }
+      <View key={i} style={GiveStyles.option}>
+        <TouchableOpacity
+          onPress={() => {
+              this.showModal(option);
             }
-            style={GiveStyles.optionButton}
-            >
-            <Text style={GiveStyles.optionButtonText}>
-              {title}
-            </Text>
-          </TouchableOpacity>
-        </View>
-
+          }
+          style={GiveStyles.optionButton}
+          >
+          <Text style={GiveStyles.optionButtonText}>
+            {title}
+          </Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -145,7 +141,9 @@ class Give extends Component {
           scrollEventThrottle={200}
           style={GiveStyles.scrollView}
           >
-          {givingOptions.map((option) => this._getGivingOptions(option))}
+          <View  style={GiveStyles.optionsWrapper}>
+            {givingOptions.map((option, i) => this._getGivingOptions(option, i))}
+          </View>
         </ScrollView>
 
       </View>

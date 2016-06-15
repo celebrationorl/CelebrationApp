@@ -7,12 +7,12 @@ const GivingOptionsStyles = React.StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    width: width
+    width: width,
   },
 
   scrollView: {
     backgroundColor: 'transparent',
-    height: 300,
+    height: 490
   },
 
   webView: {
@@ -38,6 +38,10 @@ const GivingOptionsStyles = React.StyleSheet.create({
     paddingBottom: 10
   },
 
+  optionDetailSection: {
+    backgroundColor: 'white',
+  },
+
   areasWrapper: {
     paddingTop: 10,
     paddingBottom: 20,
@@ -57,11 +61,23 @@ const GivingOptionsStyles = React.StyleSheet.create({
     justifyContent: 'space-around'
   },
 
+  weblay: {
+    marginLeft: -20,
+    width: width,
+    borderTopWidth: 1,
+    borderTopColor: 'lightgrey'
+  },
+
+  weblaySectionWrapper: {
+    paddingTop: 20,
+  },
+
   body: {
     backgroundColor: 'white',
+    width: width,
+    paddingTop: 30,
     paddingRight: 20,
     paddingLeft: 20,
-    paddingTop: 30,
     paddingBottom: 30,
   },
 
@@ -71,12 +87,23 @@ const GivingOptionsStyles = React.StyleSheet.create({
   },
 
   primaryText: {
+    textAlign: 'center',
     paddingBottom: 10,
     fontFamily: 'Avenir',
     fontSize: 18,
     fontWeight: '800',
     color: black,
     alignSelf: 'center',
+  },
+
+  subPrimaryText: {
+    paddingTop: 20,
+    fontFamily: 'Avenir',
+    fontSize: 18,
+    fontWeight: '600',
+    color: black,
+    alignSelf: 'flex-start',
+    opacity: 0.94
   },
 
   secondaryText: {
@@ -86,7 +113,19 @@ const GivingOptionsStyles = React.StyleSheet.create({
     fontWeight: '400',
     color: black,
     alignSelf: 'flex-start',
-    opacity: 0.85
+    opacity: 0.85,
+  },
+
+  subSecondaryText: {
+    paddingTop: 12,
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    fontWeight: '400',
+    color: black,
+    alignSelf: 'flex-start',
+    opacity: 0.85,
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
   },
 
 });

@@ -26,7 +26,8 @@ var initialState = {
     facebook: false,
     twitter: false,
     visit: false,
-    giveLogin: false
+    giveLogin: false,
+    givePayPal: false
   }
 }
 

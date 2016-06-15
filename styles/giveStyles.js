@@ -5,12 +5,34 @@ const GiveStyles = React.StyleSheet.create({
 
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   scrollView: {
     backgroundColor: 'transparent',
     height: height,
+    width: width
+  },
+
+  optionsWrapper: {
+    alignItems: 'center',
+  },
+
+  optionButton: {
+    paddingTop: 35,
+    paddingBottom: 35,
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey',
+    width: width,
+  },
+
+  optionButtonText: {
+    fontFamily: 'Avenir',
+    textAlign: 'center',
+    color: '#171717',
+    fontSize: 18,
+    fontWeight: '500'
   },
 
   modalContainer: {
@@ -35,7 +57,7 @@ const GiveStyles = React.StyleSheet.create({
 
   modalCloseButtonText: {
     fontFamily: 'Avenir',
-    color: 'black',
+    color: '#171717',
   },
 
 });
