@@ -24,8 +24,30 @@ var injectedJSCode = `
   document.querySelector("#footer").style.display = "none";
 
   document.querySelector("div.aplayer").style.backgroundColor = "white";
+  document.querySelector("div.player").style.boxShadow = "none";
+
+  document.querySelector("div.container").style.backgroundColor = "white";
+  document.querySelector("div.container").style.width = "100%";
+  document.querySelector("div.container").style.maxWidth = "100%";
+  document.querySelector("div.container").style.overflowX = "hidden";
+
+  document.querySelector(".row").style.backgroundColor = "white";
+
+  document.querySelector(".info > h1 + p + p").style.marginBottom = "-40px";
 
   document.body.style.backgroundColor = "white";
+
+  var posts = document.getElementsByClassName("post");
+  var postsChildren = document.querySelectorAll(".post > a");
+
+  for (var i = 0; i < posts.length; i++) {
+    posts[i].style.border = "solid 3px black";
+    posts[i].style.margin = "15px";
+  }
+
+  for (var i = 0; i < postsChildren.length; i++) {
+    postsChildren[i].style.padding = "15px";
+  }
 
 `;
 
