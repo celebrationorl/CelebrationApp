@@ -91,22 +91,18 @@ class Weblay extends Component {
 
     let { hasBackNav, backNavText } = this.props;
 
-    if (hasBackNav) {
-      return (
-        <TouchableOpacity
-          onPress={() => this.goBack()}
-          style={WebviewOverlayStyles.backNavWrapper}>
-          <Text style={WebviewOverlayStyles.backNavIcon}>
-            {BackIcon}
-          </Text>
-          <Text style={WebviewOverlayStyles.backNavText}>
-            {backNavText}
-          </Text>
-        </TouchableOpacity>
-      )
-    } else {
-      return null;
-    }
+    return hasBackNav ? (
+      <TouchableOpacity
+        onPress={() => this.goBack()}
+        style={WebviewOverlayStyles.backNavWrapper}>
+        <Text style={WebviewOverlayStyles.backNavIcon}>
+          {BackIcon}
+        </Text>
+        <Text style={WebviewOverlayStyles.backNavText}>
+          {backNavText}
+        </Text>
+      </TouchableOpacity>
+    ) : null;
 
   }
 
