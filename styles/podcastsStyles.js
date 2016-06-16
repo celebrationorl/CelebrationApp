@@ -6,10 +6,6 @@ const PodcastsStyles = React.StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start'
-  },
-
-  webView: {
-    height: height
   }
 
 });

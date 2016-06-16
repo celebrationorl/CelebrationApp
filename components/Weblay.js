@@ -35,7 +35,8 @@ class Weblay extends Component {
     type: React.PropTypes.string,
     backNavText: React.PropTypes.string,
     hasBackNav: React.PropTypes.bool,
-    detailedPresentation: React.PropTypes.object
+    detailedPresentation: React.PropTypes.object,
+    webviewStyles: React.PropTypes.object
   }
 
   getLoadingIndicator(title) {
@@ -139,7 +140,7 @@ class Weblay extends Component {
         {backNav}
         <WebView
           ref="webview"
-          style={WebviewOverlayStyles.webView}
+          style={[WebviewOverlayStyles.webView, this.props.webviewStyles]}
           source={{
             uri: uri,
           }}

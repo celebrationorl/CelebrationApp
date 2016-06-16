@@ -16,25 +16,29 @@ var injectedJSCode = `
   document.querySelector("#content-wrap").style.marginTop = '70px';
   document.querySelector("#footer-callout-wrap").style.display = 'none';
 
-  // var newsBlocks = document.querySelector("div");
-  //
-  // var button = document.createElement('BUTTON');
-  // button.onclick = function() {
-  //   window.history.back();
-  // };
-  //
-  // var buttonText = document.createTextNode("❮ ALL NEWS");
-  // button.appendChild(buttonText);
-  //
-  // button.style.height = '50px';
-  // button.style.width = '100%';
-  // button.style.position = 'fixed';
-  // button.style.opacity = '0.98';
-  // button.style.zIndex = '1000';
-  // button.style.fontWeight = '600';
-  // button.style.fontSize = '24';
 
-  // document.body.insertBefore(button, newsBlocks);
+  var newsPosts = document.querySelectorAll(".blog-entry-inner.clr");
+  var buttons = document.querySelectorAll(".theme-button");
+  var titles = document.querySelectorAll(".blog-entry-title > a");
+
+  for (var i = 0; i < newsPosts.length; i++) {
+    newsPosts[i].style.border = 'solid 3px black';
+  }
+
+  for (var i = 0; i < titles.length; i++) {
+    titles[i].style.color = '#444444';
+  }
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].style.fontSize = '12px';
+    buttons[i].style.fontWeight = '600';
+    buttons[i].style.fontFamily = 'Avenir';
+    buttons[i].style.backgroundColor = 'white';
+    buttons[i].style.color = 'black';
+    buttons[i].style.border = 'solid 0px black';
+    buttons[i].style.height = '25px';
+    buttons[i].style.marginLeft = '-8px';
+  }
 
 `;
 
