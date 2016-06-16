@@ -17,6 +17,8 @@ const GiveStyles = React.StyleSheet.create({
 
   optionsWrapper: {
     alignItems: 'center',
+    marginTop: 16,
+    marginBottom: 10,
   },
 
   optionButton: {

@@ -30,7 +30,7 @@ const WebViewOverlayStyles = React.StyleSheet.create({
   },
 
   backNavText: {
-    bottom: 8,
+    bottom: 10,
     left: 50,
     fontFamily: 'Avenir',
     fontSize: 18,
